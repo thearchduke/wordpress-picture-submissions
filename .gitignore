@@ -1,0 +1,4 @@
+*.pyc
+venv-python-sandbox
+venv-python-sandbox/*
+*.JPG
