@@ -1,4 +1,6 @@
 *.pyc
 venv-python-sandbox
 venv-python-sandbox/*
+venv-on_the_road
+venv-on_the_road/*
 *.JPG
