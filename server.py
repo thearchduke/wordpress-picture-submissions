@@ -18,6 +18,7 @@ from flask import (
 from flask_sqlalchemy import SQLAlchemy
 from flask_uploads import configure_uploads
 from passlib.hash import sha256_crypt
+from werkzeug.utils import secure_filename
 
 from forms import BJSubmissionForm, imagefiles
 
@@ -122,7 +123,7 @@ def not_authorized():
 
 @app.route('/', methods=['GET'])
 def hello_world():
-    return "hello world!"
+    return redirect(url_for('submit'))
 
 @app.route('/thanks', methods=['GET'])
 def thanks():
@@ -143,7 +144,9 @@ def submit():
         submission_prefix = str(uuid.uuid1())
         for i, picture_form in enumerate(form.pictures):
             picture_file = picture_form.upload.data
-            file_name = submission_prefix + str(i)
+            extension = secure_filename(picture_form.upload.data.filename).split('.')[-1]
+            extension = '.' + extension if extension else ''
+            file_name = submission_prefix + str(i) + extension
             file_path = os.path.join(
                     app.config['APPLICATION_WORKING_DIRECTORY'], 
                     'submissions',
@@ -172,6 +175,11 @@ def submit():
     return render_template('submit.html', form=form, 
             local=app.config['LOCAL']
     )
+
+@app.route('/admin', methods=['GET'])
+@requires_auth
+def admin():
+    pass
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001, debug=True)
