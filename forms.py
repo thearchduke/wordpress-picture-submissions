@@ -1,8 +1,10 @@
+import socket 
+
 from flask_uploads import UploadSet, IMAGES
 from flask_wtf import FlaskForm, RecaptchaField
 from flask_wtf.file import FileAllowed, FileField, FileRequired
 from wtforms import fields, Form
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, Optional
 
 
 imagefiles = UploadSet('images', IMAGES)
@@ -20,7 +22,9 @@ class PictureForm(Form):
     )
     date_taken = fields.DateField(
             'Date picture taken (optional)',
-            format='%m/%d/%Y')
+            format='%m/%d/%Y',
+            validators=[Optional()]
+    )
 
 
 class BJSubmissionForm(FlaskForm):
@@ -32,4 +36,6 @@ class BJSubmissionForm(FlaskForm):
             'General introduction/description', validators=[DataRequired()]
     )
     pictures = fields.FieldList(fields.FormField(PictureForm), min_entries=1)
-    #recaptcha = RecaptchaField()
+
+    if socket.gethostname() == 'test.balloon-juice.com':
+        recaptcha = RecaptchaField()
