@@ -1,5 +1,5 @@
 from flask_uploads import UploadSet, IMAGES
-from flask_wtf import FlaskForm
+from flask_wtf import FlaskForm, RecaptchaField
 from flask_wtf.file import FileAllowed, FileField, FileRequired
 from wtforms import fields, Form
 from wtforms.validators import DataRequired
@@ -32,4 +32,4 @@ class BJSubmissionForm(FlaskForm):
             'General introduction/description', validators=[DataRequired()]
     )
     pictures = fields.FieldList(fields.FormField(PictureForm), min_entries=1)
-    #TODO: recaptcha https://flask-wtf.readthedocs.io/en/stable/form.html
+    recaptcha = RecaptchaField()
