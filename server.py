@@ -170,7 +170,7 @@ def submit():
     if form.errors:
         print form.errors
     return render_template('submit.html', form=form, 
-            development=app.config['DEVELOPMENT']
+            local=app.config['LOCAL']
     )
 
 if __name__ == '__main__':

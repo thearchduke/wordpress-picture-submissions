@@ -16,4 +16,4 @@ UPLOADED_IMAGES_DEST = './'
 RECAPTCHA_PUBLIC_KEY = '6Le1LiQUAAAAAOM6zy72Onng715UbCbR_YY_JCe9'
 RECAPTCHA_PRIVATE_KEY = '6Le1LiQUAAAAAB9qyZgdau3312TjCa5QXfFsu7d0'
 APPLICATION_WORKING_DIRECTORY = os.getcwd()
-DEVELOPMENT = socket.gethostname() == 'test.balloon-juice.com'
+LOCAL = socket.gethostname() != 'test.balloon-juice.com'

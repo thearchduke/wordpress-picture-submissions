@@ -32,7 +32,7 @@
             {{ picture_form.date_taken.label }}{{ picture_form.date_taken(class='dtpick') }}
         {% endfor %}
     </ul>
-    {% if development == False %}
+    {% if local == False %}
         {{ form.recaptcha }}
     {% endif %}
     <input type="submit" value="Submit">
