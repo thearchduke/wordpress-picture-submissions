@@ -1,14 +1,26 @@
 {% macro render_field(field) %}
     {{ field.label }} {{ field }}
 {% endmacro %}
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script>
+    $(function() {
+        $( ".dtpick" ).datepicker();
+    });
+</script>
 
-<form method="POST" action="{{ url_for('submit') }}">
+<form method="POST" enctype="multipart/form-data" action="{{ url_for('submit') }}">
     {{ form.csrf_token }}
     <ul>
         <li>{{ render_field(form.nym) }}</li>
         <li>{{ render_field(form.email) }}</li>
         <li>{{ render_field(form.introduction) }}</li>
-        <li>{{ render_field(form.pictures) }}</li>
+        {% for picture_form in form.pictures %}
+            {{ render_field(picture_form.upload) }}
+            {{ render_field(picture_form.title) }}
+            {{ render_field(picture_form.picture_description) }}
+            {{ picture_form.date.label }}{{ picture_form.date(class='dtpick') }}
+        {% endfor %}
     </ul>
     <input type="submit" value="Submit">
 </form>

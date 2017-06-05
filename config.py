@@ -7,3 +7,4 @@
 SECRET_KEY = 'm\t\x83.\xc0\xfaJ\x00\x16\xb9*,\xa7\xb0\xc0\x89\xac\x1f\xb0\r\x9f\xed1\xb6'
 HTML_SAFE = False
 SQLALCHEMY_DATABASE_URI = 'sqlite:///submissions.db'
+UPLOADED_IMAGES_DEST = './'

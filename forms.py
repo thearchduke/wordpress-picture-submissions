@@ -4,20 +4,23 @@ from flask_wtf.file import FileAllowed, FileField, FileRequired
 from wtforms import fields, Form
 from wtforms.validators import DataRequired
 
-image_set = UploadSet('images', IMAGES)
+
+imagefiles = UploadSet('images', IMAGES)
 
 
 class PictureForm(Form):
     upload = FileField('Picture', validators=[
             FileRequired(), 
-            FileAllowed(image_set, 'Images only')
+            FileAllowed(imagefiles, 'Images only')
     ])
     title = fields.StringField('Title (optional)')
-    date = fields.DateField('Date picture taken (optional)')
-    description = fields.TextAreaField(
+    picture_description = fields.TextAreaField(
             'Picture description (shows before picture)',
             validators=[DataRequired()]
     )
+    date = fields.DateField(
+            'Date picture taken (optional)',
+            format='%m/%d/%Y')
 
 
 class BJSubmissionForm(FlaskForm):

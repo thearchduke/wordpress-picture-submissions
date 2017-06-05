@@ -14,14 +14,15 @@ from flask import (
         url_for, 
 )
 from flask_sqlalchemy import SQLAlchemy
+from flask_uploads import configure_uploads
 from passlib.hash import sha256_crypt
 
-from forms import BJSubmissionForm
-
+from forms import BJSubmissionForm, imagefiles
 
 app = Flask(__name__)
 app.config.from_object('config')
 db = SQLAlchemy(app)
+configure_uploads(app, (imagefiles,))
 
 
 class User(db.Model):
@@ -117,13 +118,19 @@ def not_authorized():
     return redirect(url_for('.home'))
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def hello_world():
     return "hello world!"
 
-@app.route('/submit')
+@app.route('/submit', methods=['GET', 'POST'])
 def submit():
     form = BJSubmissionForm()
+    if form.validate_on_submit():
+        for field in form:
+            print field
+        print form
+    if form.errors:
+        print form.errors
     return render_template('submit.html', form=form)
 
 if __name__ == '__main__':
