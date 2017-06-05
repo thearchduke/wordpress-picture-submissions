@@ -4,3 +4,5 @@ venv-python-sandbox/*
 venv-on_the_road
 venv-on_the_road/*
 submissions/*
+*.db
+

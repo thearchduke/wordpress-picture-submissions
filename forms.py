@@ -18,7 +18,7 @@ class PictureForm(Form):
             'Picture description (shows before picture)',
             validators=[DataRequired()]
     )
-    date = fields.DateField(
+    date_taken = fields.DateField(
             'Date picture taken (optional)',
             format='%m/%d/%Y')
 

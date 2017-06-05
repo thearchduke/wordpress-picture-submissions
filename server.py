@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import datetime
 from functools import wraps
 import os
 import sys
@@ -58,7 +59,7 @@ class Submission(db.Model):
             'Picture', backref='submission', lazy='dynamic'
     )
     # metadata
-    approved = db.Column(db.Boolean())
+    status = db.Column(db.String(64))
     successfully_posted = db.Column(db.Boolean())
     datetime_submitted = db.Column(db.DateTime())
     datetime_approved = db.Column(db.DateTime())
@@ -76,7 +77,7 @@ class Picture(db.Model):
     # submitted
     title = db.Column(db.Text())
     date_taken = db.Column(db.Date())
-    description = db.Column(db.Text())
+    picture_description = db.Column(db.Text())
     # meta
     file_location = db.Column(db.String(1024))
 
@@ -123,14 +124,49 @@ def not_authorized():
 def hello_world():
     return "hello world!"
 
+@app.route('/thanks', methods=['GET'])
+def thanks():
+    return "thanks!"
+
 @app.route('/submit', methods=['GET', 'POST'])
 def submit():
     form = BJSubmissionForm()
     if form.validate_on_submit():
-        f = form.pictures[0].upload.data
-        u = str(uuid.uuid1())
-        f.save(os.path.join(os.getcwd(), 'submissions', u))
-        return redirect(url_for('hello_world'))
+        submission = Submission(
+                nym=form.nym.data,
+                email=form.email.data,
+                introduction=form.introduction.data,
+                status='pending',
+                datetime_submitted=datetime.datetime.now(),
+                ip_address=str(request.remote_addr)
+        )
+        submission_prefix = str(uuid.uuid1())
+        for i, picture_form in enumerate(form.pictures):
+            picture_file = picture_form.upload.data
+            file_name = submission_prefix + str(i)
+            file_path = os.path.join(
+                    app.config['APPLICATION_WORKING_DIRECTORY'], 
+                    'submissions',
+                    file_name
+            )
+            try:
+                picture_file.save(file_path)
+            except:
+                flash("Something went wrong uploading picture #%s, %s" % (
+                        str(i+1), form.title.data)
+                )
+                continue
+            submission.pictures.append(Picture(
+                    title=picture_form.title.data,
+                    date_taken=picture_form.date_taken.data,
+                    picture_description=picture_form.picture_description.data,
+                    file_location=file_path
+            ))
+            picture = Picture()
+        db.session.add(submission)
+        db.session.commit()
+        flash("Thanks for your submission!")
+        return redirect(url_for('thanks'))
     if form.errors:
         print form.errors
     return render_template('submit.html', form=form)
