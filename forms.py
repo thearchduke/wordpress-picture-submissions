@@ -32,4 +32,4 @@ class BJSubmissionForm(FlaskForm):
             'General introduction/description', validators=[DataRequired()]
     )
     pictures = fields.FieldList(fields.FormField(PictureForm), min_entries=1)
-    recaptcha = RecaptchaField()
+    #recaptcha = RecaptchaField()

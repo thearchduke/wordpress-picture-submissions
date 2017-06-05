@@ -2,6 +2,7 @@
 from functools import wraps
 import os
 import sys
+import uuid
 
 from flask import (
         flash, 
@@ -126,9 +127,10 @@ def hello_world():
 def submit():
     form = BJSubmissionForm()
     if form.validate_on_submit():
-        for field in form:
-            print field
-        print form
+        f = form.pictures[0].upload.data
+        u = str(uuid.uuid1())
+        f.save(os.path.join(os.getcwd(), 'submissions', u))
+        return redirect(url_for('hello_world'))
     if form.errors:
         print form.errors
     return render_template('submit.html', form=form)
