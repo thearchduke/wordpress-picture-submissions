@@ -16,6 +16,8 @@ from flask import (
 from flask_sqlalchemy import SQLAlchemy
 from passlib.hash import sha256_crypt
 
+from forms import BJSubmissionForm
+
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -71,7 +73,7 @@ class Picture(db.Model):
     submission_id = db.Column(db.Integer, db.ForeignKey('submission.id'))
     # submitted
     title = db.Column(db.Text())
-    date_taken = db.Column(db.DateTime())
+    date_taken = db.Column(db.Date())
     description = db.Column(db.Text())
     # meta
     file_location = db.Column(db.String(1024))
@@ -119,6 +121,10 @@ def not_authorized():
 def hello_world():
     return "hello world!"
 
+@app.route('/submit')
+def submit():
+    form = BJSubmissionForm()
+    return render_template('submit.html', form=form)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001, debug=True)

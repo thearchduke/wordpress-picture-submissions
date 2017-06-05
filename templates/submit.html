@@ -1,0 +1,14 @@
+{% macro render_field(field) %}
+    {{ field.label }} {{ field }}
+{% endmacro %}
+
+<form method="POST" action="{{ url_for('submit') }}">
+    {{ form.csrf_token }}
+    <ul>
+        <li>{{ render_field(form.nym) }}</li>
+        <li>{{ render_field(form.email) }}</li>
+        <li>{{ render_field(form.introduction) }}</li>
+        <li>{{ render_field(form.pictures) }}</li>
+    </ul>
+    <input type="submit" value="Submit">
+</form>
