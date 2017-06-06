@@ -35,7 +35,12 @@ class BJSubmissionForm(FlaskForm):
     introduction = fields.TextAreaField(
             'General introduction/description', validators=[DataRequired()]
     )
-    pictures = fields.FieldList(fields.FormField(PictureForm), min_entries=1)
+    pictures = fields.FieldList(
+            fields.FormField(PictureForm), 
+            min_entries=5, 
+            max_entries=5,
+            validators=[Optional()]
+    )
 
     if socket.gethostname() == 'test.balloon-juice.com':
         recaptcha = RecaptchaField()

@@ -132,7 +132,13 @@ def thanks():
 @app.route('/submit', methods=['GET', 'POST'])
 def submit():
     form = BJSubmissionForm()
-    if form.validate_on_submit():
+    pictures_to_parse = [p for p in form.pictures if p.upload.data]
+    slice_index = len(pictures_to_parse) if pictures_to_parse else 1
+    if form.validate_on_submit():        
+        if not pictures_to_parse:
+            flash("You need to submit some pictures!")
+            return render_template('submit.html', 
+                    form=form, local=app.config['LOCAL'], slice_index=slice_index)
         submission = Submission(
                 nym=form.nym.data,
                 email=form.email.data,
@@ -142,7 +148,10 @@ def submit():
                 ip_address=str(request.remote_addr)
         )
         submission_prefix = str(uuid.uuid1())
-        for i, picture_form in enumerate(form.pictures):
+        for i, picture_form in enumerate(pictures_to_parse):
+            if not picture_form.validate(request):
+                return render_template('submit.html', 
+                        form=form, local=app.config['LOCAL'], slice_index=slice_index)
             picture_file = picture_form.upload.data
             extension = secure_filename(picture_form.upload.data.filename).split('.')[-1]
             extension = '.' + extension if extension else ''
@@ -165,15 +174,15 @@ def submit():
                     picture_description=picture_form.picture_description.data,
                     file_location=file_path
             ))
-            picture = Picture()
         db.session.add(submission)
         db.session.commit()
         flash("Thanks for your submission!")
         return redirect(url_for('thanks'))
     if form.errors:
         print form.errors
-    return render_template('submit.html', form=form, 
-            local=app.config['LOCAL']
+    return render_template(
+            'submit.html', form=form, local=app.config['LOCAL'], 
+            slice_index=slice_index
     )
 
 @app.route('/admin', methods=['GET'])

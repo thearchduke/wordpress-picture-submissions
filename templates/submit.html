@@ -1,5 +1,10 @@
 {% macro render_field(field) %}
     {{ field.label }} {{ field }}
+    {% if field.errors %}
+        {% for error in field.errors %}
+            <span style="color: red;">{{ error }}</span><br/>
+        {% endfor %}
+    {% endif %}
 {% endmacro %}
 
 {% extends "base.html" %}
@@ -11,33 +16,46 @@
 
 {% block jumbotron %}
 <h1>Submit pictures for On The Road!</h1>
+{% if local == False and form.recaptcha.errors %}
+    <p style="color: red;">Please fill out the reCAPTCHA box at the end to confirm that you're human. You may need to supply your image files again too.</p>
+{% endif %}
 {% endblock %}
 
 {% block content %}
-<ul class="error-list" style="color: red;">
-{% for field_name, field_errors in form.errors.items() if field_errors %}
-    <li>{{ field_name }}: {{ field_errors }}</li>
-{% endfor %}
-</ul>
-<form method="POST" enctype="multipart/form-data" action="{{ url_for('submit') }}">
+<form id="submissionForm" method="POST" enctype="multipart/form-data" action="{{ url_for('submit') }}">
     {{ form.csrf_token }}
     <ul>
         <li>{{ render_field(form.nym) }}</li>
         <li>{{ render_field(form.email) }}</li>
         <li>{{ render_field(form.introduction) }}</li>
         {% for picture_form in form.pictures %}
-            {{ render_field(picture_form.upload) }}
-            {{ render_field(picture_form.title) }}
-            {{ render_field(picture_form.picture_description) }}
-            {{ picture_form.date_taken.label }}{{ picture_form.date_taken(class='dtpick') }}
+        <li class="picture-form">
+            <ul>
+                <li>{{ render_field(picture_form.upload) }}</li>
+                <li>{{ render_field(picture_form.title) }}</li>
+                <li>{{ render_field(picture_form.picture_description) }}</li>
+                <li>{{ picture_form.date_taken.label }}{{ picture_form.date_taken(class='dtpick') }}</li>
+            </ul>
+            <button type="button" class="btn btn-sm btn-warning remove-picture">remove picture</a>
+        </li>
         {% endfor %}
     </ul>
     {% if local == False %}
         {{ form.recaptcha }}
     {% endif %}
-    <input type="submit" value="Submit">
+    <button type="button" class="btn btn-sm btn-success" id="add-picture">Add another picture</button>
+    <br/>
+    <input type="submit" value="Submit" id="submitButton">
 </form>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 {% endblock %}
+
 
 {% block scripts %}
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -45,7 +63,24 @@
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
     $(function() {
-        $( ".dtpick" ).datepicker();
+        $(".dtpick").datepicker();
+        $('.picture-form').slice({{ slice_index }}).hide();
+        $('#add-picture').click(function(){
+            $('.picture-form:hidden').first().show();
+            if ($('.picture-form:visible').length == $('.picture-form').length) {
+                $('#add-picture').hide();
+                alert("You can only submit up to five pictures.");
+            }
+        });
+        $('.remove-picture').click(function(){
+            $(this).parent().hide();
+            if ($('.picture-form:visible').length < $('.picture-form').length) {
+                $('#add-picture').show();
+            }
+        });
+        $('#submissionForm').submit(function(){
+            $('.picture-form:hidden').remove();
+        });
     });
 </script>
 {% endblock %}
