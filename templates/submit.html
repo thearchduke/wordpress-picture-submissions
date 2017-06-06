@@ -36,14 +36,16 @@
                 <li>{{ render_field(picture_form.picture_description) }}</li>
                 <li>{{ picture_form.date_taken.label }}{{ picture_form.date_taken(class='dtpick') }}</li>
             </ul>
+            {% if loop.index != 1 %}
             <button type="button" class="btn btn-sm btn-warning remove-picture">remove picture</a>
+            {% endif %}
         </li>
         {% endfor %}
     </ul>
+    <button type="button" class="btn btn-sm btn-success" id="add-picture">Add another picture</button>
     {% if local == False %}
         {{ form.recaptcha }}
     {% endif %}
-    <button type="button" class="btn btn-sm btn-success" id="add-picture">Add another picture</button>
     <br/>
     <input type="submit" value="Submit" id="submitButton">
 </form>
@@ -69,11 +71,12 @@
             $('.picture-form:hidden').first().show();
             if ($('.picture-form:visible').length == $('.picture-form').length) {
                 $('#add-picture').hide();
-                alert("You can only submit up to five pictures.");
             }
         });
         $('.remove-picture').click(function(){
-            $(this).parent().hide();
+            parent = $(this).parent();
+            parent.find('input, textarea').val('');
+            parent.hide();
             if ($('.picture-form:visible').length < $('.picture-form').length) {
                 $('#add-picture').show();
             }

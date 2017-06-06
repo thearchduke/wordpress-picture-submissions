@@ -1,5 +1,4 @@
-import socket 
-
+import config
 from flask_uploads import UploadSet, IMAGES
 from flask_wtf import FlaskForm, RecaptchaField
 from flask_wtf.file import FileAllowed, FileField, FileRequired
@@ -37,10 +36,10 @@ class BJSubmissionForm(FlaskForm):
     )
     pictures = fields.FieldList(
             fields.FormField(PictureForm), 
-            min_entries=5, 
-            max_entries=5,
+            min_entries=config.MAX_PICTURES, 
+            max_entries=config.MAX_PICTURES,
             validators=[Optional()]
     )
 
-    if socket.gethostname() == 'test.balloon-juice.com':
+    if not config.LOCAL:
         recaptcha = RecaptchaField()
