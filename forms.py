@@ -53,8 +53,11 @@ class BJSubmissionForm(FlaskForm):
         wp = wordpress.WordpressAPI(local=config.LOCAL)
         if not wp.verify_nym(form.nym.data, form.email.data):
             form.email.errors.append("Something went wrong verifying this "
-                    "email and username combination. Have you commented "
-                    "at Balloon-Juice before?"
+                    "email and username combination. If you haven't "
+                    "commented at Balloon-Juice before, go comment in an "
+                    "active thread, wait for it to get approved, and come "
+                    "submit your pictures again. Alternatively, email your "
+                    "pictures to please@getmechamot.com"
             )
             result = False
         return result
