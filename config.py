@@ -21,7 +21,7 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///submissions.db'
 UPLOADED_IMAGES_DEST = './'
 
 WORDPRESS = {
-        'testing': {
+        'local': {
                 'base_url': 'https://test.balloon-juice.com/index.php/wp-json',
                 'client_key': '3Xh5uQ3FTY2X',
                 'client_secret': 'ZUo6GuQovNUFhFmP4XNOBsnvtphs5O1cEOPolpcBx1GjmBh9',

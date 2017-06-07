@@ -5,10 +5,10 @@ import json
 
 
 class WordpressAPI(object):
-    def __init__(self, environment=None):
-        if environment is None or environment not in config.WORDPRESS:
+    def __init__(self, local=None):
+        if local is None:
             raise ValueError("Bad or missing `environment` kwarg")
-        self.environment = environment
+        environment = 'local' if local else 'production'
         get_value = lambda k: config.WORDPRESS[environment][k]
         self.base_url = get_value('base_url')
         self.client_key = get_value('client_key')
@@ -33,6 +33,8 @@ class WordpressAPI(object):
     def verify_nym(self, nym, email):
         payload = {'author_email': email}
         r = self.get('/wp/v2/comments', params=payload)
+        if r.status_code != 200:
+            return False
         results = json.loads(r.text)
         if any([result for result in results if result['author_name']==nym]):
             return True

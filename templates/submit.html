@@ -1,5 +1,5 @@
-{% macro render_field(field) %}
-    {{ field.label }} {{ field }}
+{% macro render_field(field, class=None) %}
+    {{ field.label }} {% if class %}{{ field(class_=class) }}{% else %}{{ field }}{% endif %}
     {% if field.errors %}
         {% for error in field.errors %}
             <span style="color: red;">{{ error }}</span><br/>
@@ -31,7 +31,10 @@
         {% for picture_form in form.pictures %}
         <li class="picture-form">
             <ul>
-                <li>{{ render_field(picture_form.upload) }}</li>
+                <li>
+                    {{ render_field(picture_form.upload, class="picture-upload-input") }}
+                    <img src="" class="picture-form-preview" style="width: 200px;">
+                </li>
                 <li>{{ render_field(picture_form.title) }}</li>
                 <li>{{ render_field(picture_form.picture_description) }}</li>
                 <li>{{ picture_form.date_taken.label }}{{ picture_form.date_taken(class='dtpick') }}</li>
@@ -83,6 +86,19 @@
         });
         $('#submissionForm').submit(function(){
             $('.picture-form:hidden').remove();
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $(input).next().attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $(".picture-upload-input").change(function(){
+            readURL(this);
         });
     });
 </script>

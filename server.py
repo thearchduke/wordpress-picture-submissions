@@ -22,6 +22,7 @@ from werkzeug.utils import secure_filename
 
 from forms import BJSubmissionForm, imagefiles
 
+
 app = Flask(__name__)
 app.config.from_object('config')
 db = SQLAlchemy(app)
@@ -134,11 +135,11 @@ def submit():
     form = BJSubmissionForm()
     pictures_to_parse = [p for p in form.pictures if p.upload.data]
     slice_index = len(pictures_to_parse) if pictures_to_parse else 1
-    if form.validate_on_submit():        
-        if not pictures_to_parse:
-            flash("You need to submit some pictures!")
-            return render_template('submit.html', 
-                    form=form, local=app.config['LOCAL'], slice_index=slice_index)
+    if request.method == 'POST' and not pictures_to_parse:
+        flash("You need to submit some pictures!")
+        return render_template('submit.html', 
+                form=form, local=app.config['LOCAL'], slice_index=slice_index)        
+    if form.validate_on_submit():
         submission = Submission(
                 nym=form.nym.data,
                 email=form.email.data,

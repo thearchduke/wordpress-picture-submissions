@@ -3,7 +3,9 @@ from flask_uploads import UploadSet, IMAGES
 from flask_wtf import FlaskForm, RecaptchaField
 from flask_wtf.file import FileAllowed, FileField, FileRequired
 from wtforms import fields, Form
-from wtforms.validators import DataRequired, Optional
+from wtforms.validators import DataRequired, Optional, ValidationError
+
+import wordpress
 
 
 imagefiles = UploadSet('images', IMAGES)
@@ -43,3 +45,16 @@ class BJSubmissionForm(FlaskForm):
 
     if not config.LOCAL:
         recaptcha = RecaptchaField()
+
+    def validate(form):
+        if not Form.validate(form):
+            return False
+        result = True
+        wp = wordpress.WordpressAPI(local=config.LOCAL)
+        if not wp.verify_nym(form.nym.data, form.email.data):
+            form.email.errors.append("Something went wrong verifying this "
+                    "email and username combination. Have you commented "
+                    "at Balloon-Juice before?"
+            )
+            result = False
+        return result
