@@ -1,32 +1,42 @@
 from requests_oauthlib import OAuth1Session
 
-class WordpressAPI(object):
-    def __init__(self, testing=None):
-        if testing is None:
-            raise ValueError("WordpressAPI requires `testing` kwarg")
-        self.testing = testing
-        if testing:
-            self.base_url = 'https://test.balloon-juice.com/index.php/wp-json'
-            self.client_key = '3Xh5uQ3FTY2X'
-            self.client_secret = 'ZUo6GuQovNUFhFmP4XNOBsnvtphs5O1cEOPolpcBx1GjmBh9'
-            self.resource_owner_key = u'rrg8d6gIE6Jx0Ghs6VYpBcaL'
-            self.resource_owner_secret = u'tU5hFTJNmUSm2v631ykw5X4g3IEHDBMBUV6XLxw7kuGHu8cM'
-            self.oauth = OAuth1Session(
-                    self.client_key,
-                    client_secret=self.client_secret,
-                    resource_owner_key=self.resource_owner_key,
-                    resource_owner_secret=self.resource_owner_secret
-            )
-        else:
-            raise NotImplementedError()
+import config
+import json
 
-    def get(self, path):
+
+class WordpressAPI(object):
+    def __init__(self, environment=None):
+        if environment is None or environment not in config.WORDPRESS:
+            raise ValueError("Bad or missing `environment` kwarg")
+        self.environment = environment
+        get_value = lambda k: config.WORDPRESS[environment][k]
+        self.base_url = get_value('base_url')
+        self.client_key = get_value('client_key')
+        self.client_secret = get_value('client_secret')
+        self.resource_owner_key = get_value('resource_owner_key')
+        self.resource_owner_secret = get_value('resource_owner_secret')
+        self.oauth = OAuth1Session(
+                self.client_key,
+                client_secret=self.client_secret,
+                resource_owner_key=self.resource_owner_key,
+                resource_owner_secret=self.resource_owner_secret
+        )
+
+    def get(self, path, **kwargs):
         url = self._make_url(path)
-        return self.oauth.get(url)
+        return self.oauth.get(url, **kwargs)
 
     def post(self, path, **kwargs):
         url = self._make_url(path)
         return self.oauth.post(url, **kwargs)
+
+    def verify_nym(self, nym, email):
+        payload = {'author_email': email}
+        r = self.get('/wp/v2/comments', params=payload)
+        results = json.loads(r.text)
+        if any([result for result in results if result['author_name']==nym]):
+            return True
+        return False
 
     def _make_url(self, path):
         return self.base_url + path
