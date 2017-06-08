@@ -5,11 +5,9 @@ import json
 
 
 class WordpressAPI(object):
-    def __init__(self, local=None):
-        if local is None:
-            raise ValueError("Bad or missing `environment` kwarg")
-        environment = 'local' if local else 'production'
-        get_value = lambda k: config.WORDPRESS[environment][k]
+    def __init__(self, credentials='test'):
+        assert credentials in ('test', 'production')
+        get_value = lambda k: config.WORDPRESS[credentials][k]
         self.base_url = get_value('base_url')
         self.client_key = get_value('client_key')
         self.client_secret = get_value('client_secret')

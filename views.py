@@ -1,13 +1,10 @@
-#!/usr/bin/env python
 import datetime
 from functools import wraps
 import os
-import sys
 import uuid
 
 from flask import (
         flash, 
-        Flask, 
         redirect, 
         render_template, 
         request, 
@@ -15,73 +12,10 @@ from flask import (
         session, 
         url_for, 
 )
-from flask_sqlalchemy import SQLAlchemy
-from flask_uploads import configure_uploads
-from passlib.hash import sha256_crypt
 from werkzeug.utils import secure_filename
 
-from forms import BJSubmissionForm, imagefiles
-
-
-app = Flask(__name__)
-app.config.from_object('config')
-db = SQLAlchemy(app)
-configure_uploads(app, (imagefiles,))
-
-
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True)
-    hashed_password = db.Column(db.String(256))
-
-    def hash_password(self, password):
-        hashed_password = sha256_crypt.encrypt(password)
-        return hashed_password
-
-    def verify_password(self, challenge):
-        test = sha256_crypt.verify(challenge, self.hashed_password)
-        return test
-
-    def __init__(self, username, password):
-        self.username = username
-        self.hashed_password = self.hash_password(password)
-
-    def __repr__(self):
-        return '<User %r>' % self.username
-
-
-class Submission(db.Model):
-    # sql
-    id = db.Column(db.Integer, primary_key=True)
-    # submitted
-    nym = db.Column(db.String(1024))
-    email = db.Column(db.String(1024))
-    introduction = db.Column(db.Text())
-    pictures = db.relationship(
-            'Picture', backref='submission', lazy='dynamic'
-    )
-    # metadata
-    status = db.Column(db.String(64))
-    successfully_posted = db.Column(db.Boolean())
-    datetime_submitted = db.Column(db.DateTime())
-    datetime_approved = db.Column(db.DateTime())
-    datetime_posted = db.Column(db.DateTime())
-    ip_address = db.Column(db.String(256))
-    # date/time
-    # ip
-    # etc.
-
-
-class Picture(db.Model):
-    # sql
-    id = db.Column(db.Integer, primary_key=True)
-    submission_id = db.Column(db.Integer, db.ForeignKey('submission.id'))
-    # submitted
-    title = db.Column(db.Text())
-    date_taken = db.Column(db.Date())
-    picture_description = db.Column(db.Text())
-    # meta
-    file_location = db.Column(db.String(1024))
+from app import app, db, User, Picture, Submission
+from forms import BJSubmissionForm
 
 
 ## Authorization
@@ -89,7 +23,9 @@ def check_auth(username, password):
     """This function is called to check if a username /
     password combination is valid.
     """
-    u = db.session.query(User).filter(User.username == username).first()
+    if app.config['TESTING'] == True and username == 'admin' and password == 'admin':
+        return True
+    u = User.query.filter_by(username=username).first()
     if u and u.verify_password(password):
         session['current_user'] = {'username': u.username, 'id': u.id}
         return True
@@ -122,23 +58,22 @@ def not_authorized():
     return redirect(url_for('.home'))
 
 
-@app.route('/', methods=['GET'])
-def hello_world():
-    return redirect(url_for('submit'))
-
-@app.route('/thanks', methods=['GET'])
-def thanks():
-    return "thanks!"
-
-@app.route('/submit', methods=['GET', 'POST'])
+## View functions
 def submit():
-    form = BJSubmissionForm()
-    pictures_to_parse = [p for p in form.pictures if p.upload.data]
+    print "um"
+    try:
+        form = BJSubmissionForm()
+        pictures_to_parse = [p for p in form.pictures if p.upload.data]
+    except:
+        flash("Something went wrong. Make sure that all of your pictures "
+                "are smaller than %sMB." % app.config['MAX_CONTENT_MB']
+        )
+        return redirect(url_for('submit'))
     slice_index = len(pictures_to_parse) if pictures_to_parse else 1
     if request.method == 'POST' and not pictures_to_parse:
         flash("You need to submit some pictures!")
         return render_template('submit.html', 
-                form=form, local=app.config['LOCAL'], slice_index=slice_index)        
+                form=form, config=app.config, slice_index=slice_index)        
     if form.validate_on_submit():
         submission = Submission(
                 nym=form.nym.data,
@@ -152,7 +87,7 @@ def submit():
         for i, picture_form in enumerate(pictures_to_parse):
             if not picture_form.validate(request):
                 return render_template('submit.html', 
-                        form=form, local=app.config['LOCAL'], slice_index=slice_index)
+                        form=form, config=app.config, slice_index=slice_index)
             picture_file = picture_form.upload.data
             extension = secure_filename(picture_form.upload.data.filename).split('.')[-1]
             extension = '.' + extension if extension else ''
@@ -177,19 +112,24 @@ def submit():
             ))
         db.session.add(submission)
         db.session.commit()
-        flash("Thanks for your submission!")
         return redirect(url_for('thanks'))
     if form.errors:
         print form.errors
     return render_template(
-            'submit.html', form=form, local=app.config['LOCAL'], 
+            'submit.html', form=form, config=app.config, 
             slice_index=slice_index
     )
 
-@app.route('/admin', methods=['GET'])
-@requires_auth
-def admin():
-    pass
+def thanks():
+    return render_template('thanks.html')
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001, debug=True)
+@requires_auth
+def admin_list():
+    pending_submissions = Submission.query.filter_by(status='pending').all()
+    return render_template('admin_list.html', pending_submissions=pending_submissions)
+    return "admin page!"
+
+@requires_auth
+def admin_detail(submission_id):
+    submission = Submission.query.get_or_404(submission_id)
+    return render_template('admin_detail.html', submission=submission)

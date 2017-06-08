@@ -50,7 +50,7 @@ class BJSubmissionForm(FlaskForm):
         if not Form.validate(form):
             return False
         result = True
-        wp = wordpress.WordpressAPI(local=config.LOCAL)
+        wp = wordpress.WordpressAPI()
         if not wp.verify_nym(form.nym.data, form.email.data):
             form.email.errors.append("Something went wrong verifying this "
                     "email and username combination. If you haven't "

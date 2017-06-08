@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}On The Road | Thanks!{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block jumbotron %}
+<h1>Thanks for your submission!</h1>
+<p>Your photo(s) have been successfully submitted! They will be published
+sometime soon, and I'll try to let you know ahead of time so you can be
+around, should you like.</p>
+
+<p>If you have any corrections or additions, please email Alain at
+<a href="mailto:please@getmechamot.com">please@getmechamot.com</a>.</p>
+
+<p class="valediction">Thanks for your contribution, I can't wait to review it,
+<br/>Alain</p>
+{% endblock %}
+
+{% block content %}
+<p><a href="{{ url_for('submit') }}">Click here</a> to return to the submission form.</p>
+{% endblock %}

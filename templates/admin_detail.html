@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}On The Road | Admin | Detail{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block jumbotron %}
+<h1>On The Road | Admin | Detail</h1>
+<p>Details for submission #{{ submission.id }}</p>
+{% endblock %}
+
+{% block content %}
+    {% for picture in submission.pictures %}
+        {{ picture }}
+    {% endfor %}
+{% endblock %}

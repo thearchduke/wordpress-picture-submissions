@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}On The Road | Admin{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block jumbotron %}
+<h1>On The Road | Admin</h1>
+<p>A list of pending submissions.</p>
+{% endblock %}
+
+{% block content %}
+    {% for submission in pending_submissions %}
+        <a href="{{ url_for('admin_detail', submission_id=submission.id) }}">{{ submission }}</a>
+    {% endfor %}
+{% endblock %}
