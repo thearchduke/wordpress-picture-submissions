@@ -1,0 +1,35 @@
+Good Morning All,
+
+This weekday feature is for Balloon Juicers who are on the road, travelling, etc. and wish to share notes, links, pictures, stories, etc. from their escapades. As the US mainland begins the end of the Earth day as we measure it, many of us rise to read about our friends and their transient locales.
+
+So, please, speak up and share some of your adventures, observations, and sights as you explore, no matter where you are. By concentrating travel updates here, it's easier for all to keep up-to-date on the adventures of our fellow Commentariat. And it makes finding some travel tips or ideas from 6 months ago so much easier to find...
+
+Have at 'em, and have a safe day of travels!
+
+&nbsp;
+
+Should you have any pictures (tasteful, relevant, etc....) you can email them to picstopost@balloon-juice.com or just use this nifty link to start an email: <a href="mailto:picstopost@balloon-juice.com?subject=Picture to Post on Balloon Juice&amp;body=Where it was taken: When: Commenter nym: Other notes or info about the picture:">Start an Email to send a Picture to Post on Balloon Juice</a>
+
+We're working on a better system for submitting photos and accompanying text. It will allow you to attach text to pictures and submit them so that I don't scramble the description or leave out an important detail. Plus less time needed for the mechanics on my end, so all-around better, I'd say.
+
+<!--more-->
+<blockquote>From {{ submission.nym }}
+
+{{ submission.introduction }}
+
+<ul>
+{% for picture, result in upload_results %}
+    <li>
+        {{ result.description.rendered }}
+        {% if picture.picture_description %}
+            <br/>{{ picture.picture_description }}
+        {% endif %}
+        {% if picture.date_taken %}
+            <br/>Taken on {{ picture.date_taken }}
+        {% endif %}
+    </li>
+{% endfor %}
+</ul>
+</blockquote>
+
+Thanks for reading, insert sign-off here!

@@ -91,6 +91,7 @@ def submit():
         submission_prefix = str(uuid.uuid1())
         for i, picture_form in enumerate(pictures_to_parse):
             if not picture_form.validate(request):
+                for error in picture_form.errors: print error
                 return render_template('submit.html', 
                         form=form, config=app.config, slice_index=slice_index)
             picture_file = picture_form.upload.data

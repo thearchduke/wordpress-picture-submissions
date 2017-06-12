@@ -64,3 +64,4 @@ class SubmissionForm(FlaskForm):
 
 class SubmissionAdminForm(FlaskForm):
     pass
+    
