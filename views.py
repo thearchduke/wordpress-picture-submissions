@@ -14,8 +14,9 @@ from flask import (
 )
 from werkzeug.utils import secure_filename
 
-from app import app, db, User, Picture, Submission
+from app import app, db
 from forms import SubmissionAdminForm, SubmissionForm
+from models import User, Picture, Submission
 
 
 ## Authorization
@@ -59,6 +60,11 @@ def not_authorized():
 
 
 ## View functions
+@app.route('/', methods=['GET'])
+def index():
+    return redirect(url_for('submit'))
+
+@app.route('/submit/', methods=['GET', 'POST'])
 def submit():
     try:
         form = SubmissionForm()
@@ -119,14 +125,17 @@ def submit():
             slice_index=slice_index
     )
 
+@app.route('/thanks/', methods=['GET'])
 def thanks():
     return render_template('thanks.html')
 
+@app.route('/admin/', methods=['GET'])
 @requires_auth
 def admin_list():
     pending_submissions = Submission.query.filter_by(status='pending').all()
     return render_template('admin_list.html', pending_submissions=pending_submissions)
 
+@app.route('/admin/<submission_id>', methods=['GET'])
 @requires_auth
 def admin_detail(submission_id):
     submission = Submission.query.get_or_404(submission_id)
