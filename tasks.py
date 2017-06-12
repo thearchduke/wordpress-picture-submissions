@@ -1,11 +1,39 @@
 import logging
 
+from celery import Celery
 import jinja2
 
+from app import app, db
+from models import Submission
 from wordpress import WordpressAPI
 
 
-class BJPostWriter(object):
+def make_celery(application):
+    celery = Celery(
+            application.import_name, 
+            backend=application.config['CELERY_RESULT_BACKEND'],
+            broker=application.config['CELERY_BROKER_URL']
+    )
+    celery.conf.update(application.config)
+    TaskBase = celery.Task
+    class ContextTask(TaskBase):
+        abstract = True
+        def __call__(self, *args, **kwargs):
+            with application.app_context():
+                return TaskBase.__call__(self, *args, **kwargs)
+    celery.Task = ContextTask
+    return celery
+
+celery = make_celery(app)
+
+@celery.task()
+def make_draft_post(submission_id):
+    submission = Submission.query.get(submission_id)
+    writer = _BJPostWriter(submission)
+    return writer.make_draft_post()
+
+
+class _BJPostWriter(object):
     def __init__(self, submission):
         self.wp = WordpressAPI()
         self.submission = submission
@@ -13,6 +41,7 @@ class BJPostWriter(object):
     def upload_pictures(self):
         self.upload_results = []
         for picture in self.submission.pictures:
+            logging.info("uploading picture %s to wordpress" % picture.id)
             r = self.wp.upload_file(picture.file_location)
             if r.status_code != 201:
                 err = "Upload failed for Picture %s, reason: %s" % (
@@ -42,9 +71,12 @@ class BJPostWriter(object):
             )
             logging.error(err)
             raise IOError(err)
-        return r
+        return r.json()
 
     def make_draft_post(self):
         self.upload_pictures()
         self.write_post()
+        self.submission.status = 'submitted'
+        db.session.add(self.submission)
+        db.session.commit()
         return self.submit_post()
