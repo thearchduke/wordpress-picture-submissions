@@ -28,7 +28,7 @@ class PictureForm(Form):
     )
 
 
-class BJSubmissionForm(FlaskForm):
+class SubmissionForm(FlaskForm):
     nym = fields.StringField('Screenname', validators=[DataRequired()])
     email = fields.StringField(
             'Email (private, for verification and feedback)',
@@ -61,3 +61,6 @@ class BJSubmissionForm(FlaskForm):
             )
             result = False
         return result
+
+class SubmissionAdminForm(FlaskForm):
+    pass

@@ -15,7 +15,7 @@ from flask import (
 from werkzeug.utils import secure_filename
 
 from app import app, db, User, Picture, Submission
-from forms import BJSubmissionForm
+from forms import SubmissionAdminForm, SubmissionForm
 
 
 ## Authorization
@@ -60,9 +60,8 @@ def not_authorized():
 
 ## View functions
 def submit():
-    print "um"
     try:
-        form = BJSubmissionForm()
+        form = SubmissionForm()
         pictures_to_parse = [p for p in form.pictures if p.upload.data]
     except:
         flash("Something went wrong. Make sure that all of your pictures "
@@ -127,9 +126,9 @@ def thanks():
 def admin_list():
     pending_submissions = Submission.query.filter_by(status='pending').all()
     return render_template('admin_list.html', pending_submissions=pending_submissions)
-    return "admin page!"
 
 @requires_auth
 def admin_detail(submission_id):
     submission = Submission.query.get_or_404(submission_id)
+    form = SubmissionAdminForm()
     return render_template('admin_detail.html', submission=submission)

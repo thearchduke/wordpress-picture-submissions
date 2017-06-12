@@ -20,14 +20,14 @@ from flask_uploads import configure_uploads
 from passlib.hash import sha256_crypt
 from werkzeug.utils import secure_filename
 
-from forms import BJSubmissionForm, imagefiles
-import views
+from forms import imagefiles
 
 
 app = Flask('on_the_road')
 app.config.from_object('config')
 db = SQLAlchemy(app)
 configure_uploads(app, (imagefiles,))
+import views
 
 
 class User(db.Model):
@@ -107,4 +107,4 @@ def admin_detail(submission_id):
 
 if __name__ == '__main__':
     db.create_all()
-    app.run(host='0.0.0.0', port=5001, debug=True)
+    app.run(host='0.0.0.0', port=5001, debug=app.config['TESTING'])

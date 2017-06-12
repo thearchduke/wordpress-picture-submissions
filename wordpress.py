@@ -28,6 +28,10 @@ class WordpressAPI(object):
         url = self._make_url(path)
         return self.oauth.post(url, **kwargs)
 
+    def upload_file(self, file_path, **kwargs):
+        files = {'file': open(file_path, 'rb')}
+        return self.post('/wp/v2/media', files=files, **kwargs)
+
     def verify_nym(self, nym, email):
         payload = {'author_email': email}
         r = self.get('/wp/v2/comments', params=payload)
