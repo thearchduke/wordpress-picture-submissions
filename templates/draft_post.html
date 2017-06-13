@@ -1,35 +1,49 @@
 Good Morning All,
 
-This weekday feature is for Balloon Juicers who are on the road, travelling, etc. and wish to share notes, links, pictures, stories, etc. from their escapades. As the US mainland begins the end of the Earth day as we measure it, many of us rise to read about our friends and their transient locales.
+This weekday feature is for Juicers who are are on the road, traveling, or just want to share a little bit of their world via stories and pictures. So many of us rise each morning, eager for something beautiful, inspiring, amazing, subtle, of note, and our community delivers - a view into their world, whether they're far away or close to home - pictures with a story, with context, with meaning, sometimes just beauty. By concentrating travel updates and tips here, it's easier for all of us to keep up or find them later.
 
-So, please, speak up and share some of your adventures, observations, and sights as you explore, no matter where you are. By concentrating travel updates here, it's easier for all to keep up-to-date on the adventures of our fellow Commentariat. And it makes finding some travel tips or ideas from 6 months ago so much easier to find...
+So please, speak up and share some of your adventures and travel news here, and submit your pictures using our speedy, secure form. &lt;- make a link, etc. -&gt; You can submit up to 7 pictures at a time, with an overall description and one for each picture.
 
-Have at 'em, and have a safe day of travels!
+You can, of course, <a href="mailto:picstopost@balloon-juice.com?subject=Picture to Post on Balloon Juice&amp;body=Where it was taken: When: Commenter nym: Other notes or info about the picture:">send an email</a> with pictures if the form gives you trouble, or if you are trying to submit something special, like a zipped archive or a movie. If your pictures are already hosted online, then please email the links with your descriptions.
+
+For each picture, it's best to provide your commenter nym, description, where it was taken, and date. It's tough to keep everyone's email address and nym straight, so don't assume that I remember it "from last time". More and more, the first photo before the fold will be from a commenter, so making it easy to locate the nym when I've found a compelling photo is crucial.
+
+Have a wonderful day, and enjoy the pictures!
 
 &nbsp;
 
-Should you have any pictures (tasteful, relevant, etc....) you can email them to picstopost@balloon-juice.com or just use this nifty link to start an email: <a href="mailto:picstopost@balloon-juice.com?subject=Picture to Post on Balloon Juice&amp;body=Where it was taken: When: Commenter nym: Other notes or info about the picture:">Start an Email to send a Picture to Post on Balloon Juice</a>
-
-We're working on a better system for submitting photos and accompanying text. It will allow you to attach text to pictures and submit them so that I don't scramble the description or leave out an important detail. Plus less time needed for the mechanics on my end, so all-around better, I'd say.
-
 <!--more-->
-<blockquote>From {{ submission.nym }}
 
-{{ submission.introduction }}
+Today, pictures from valued commenter {{ submission.nym }}.
 
-<ul>
 {% for picture, result in upload_results %}
-    <li>
-        {{ result.description.rendered }}
-        {% if picture.picture_description %}
-            <br/>{{ picture.picture_description }}
-        {% endif %}
-        {% if picture.date_taken %}
-            <br/>Taken on {{ picture.date_taken }}
-        {% endif %}
-    </li>
-{% endfor %}
-</ul>
+<blockquote>{% if loop.index == 1 %}{{ submission.introduction }}{% endif %}
+
+    {% if picture.date_taken %}
+        Taken on {{ picture.date_taken }}
+    {% endif %}
+
+    {% if picture.place_taken %}
+        {{ picture.place_taken }}
+    {% endif %}
+
+    {% if picture.picture_description %}
+        {{ picture.picture_description }}
+    {% endif %}
 </blockquote>
 
-Thanks for reading, insert sign-off here!
+    {{ result.description.rendered }}
+
+{% endfor %}
+
+&nbsp;
+
+Thank you so much {{ submission.nym }}, do send us more when you can.
+
+&nbsp;
+
+Travel safely everybody, and do share some stories in the comments, even if you're joining the conversation late. Many folks confide that they go back and read old threads, one reason these are available on the Quick Links menu.
+
+&nbsp;
+
+One again, to submit pictures: Use the Form &lt;- make a link, etc. -&gt; or  <a href="mailto:picstopost@balloon-juice.com?subject=Picture to Post on Balloon Juice&amp;body=Where it was taken: When: Commenter nym: Other notes or info about the picture:">Send an Email</a>
