@@ -26,6 +26,10 @@ class PictureForm(Form):
             format='%m/%d/%Y',
             validators=[Optional()]
     )
+    place_taken = fields.TextAreaField(
+            'Where was this taken? (optional)',
+            validators=[Optional()]
+    )
 
 
 class SubmissionForm(FlaskForm):
@@ -64,4 +68,3 @@ class SubmissionForm(FlaskForm):
 
 class SubmissionAdminForm(FlaskForm):
     pass
-    

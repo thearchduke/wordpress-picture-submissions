@@ -51,6 +51,7 @@ class Picture(db.Model):
     # submitted
     title = db.Column(db.Text())
     date_taken = db.Column(db.Date())
+    place_taken = db.Column(db.Text())
     picture_description = db.Column(db.Text())
     # meta
     file_location = db.Column(db.String(1024))

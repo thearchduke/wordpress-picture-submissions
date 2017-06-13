@@ -18,4 +18,3 @@ app = Flask('on_the_road')
 app.config.from_object('config')
 db = SQLAlchemy(app)
 configure_uploads(app, (imagefiles,))
-#import views

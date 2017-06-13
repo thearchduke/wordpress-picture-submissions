@@ -26,6 +26,7 @@ def make_celery(application):
 
 celery = make_celery(app)
 
+
 @celery.task()
 def make_draft_post(submission_id):
     submission = Submission.query.get(submission_id)
@@ -61,7 +62,7 @@ class _BJPostWriter(object):
 
     def submit_post(self):
         r = self.wp.post('/wp/v2/posts', params={
-                'title': 'On The Road', 
+                'title': 'On the Road', 
                 'status': 'draft',
                 'content': self.post_text
         })

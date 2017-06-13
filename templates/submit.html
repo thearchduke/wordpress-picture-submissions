@@ -1,5 +1,14 @@
 {% macro render_field(field, class=None) %}
-    {{ field.label }} {% if class %}{{ field(class_=class) }}{% else %}{{ field }}{% endif %}
+    {{ field.label }}: <br/>{% if class %}{{ field(class_=class) }}{% else %}{{ field }}{% endif %}
+    {% if field.errors %}
+        {% for error in field.errors %}
+            <span style="color: red;">{{ error }}</span><br/>
+        {% endfor %}
+    {% endif %}
+{% endmacro %}
+
+{% macro render_textarea_field(field, rows, cols, class=None) %}
+    {{ field.label }}: <br/>{{ field(rows=rows, cols=cols) }}
     {% if field.errors %}
         {% for error in field.errors %}
             <span style="color: red;">{{ error }}</span><br/>
@@ -15,43 +24,47 @@
 {% endblock %}
 
 {% block jumbotron %}
-<h1>Submit pictures for On The Road!</h1>
+<h2>Submit pictures for On The Road!</h2>
 {% if config.LOCAL == False and form.recaptcha.errors %}
     <p style="color: red;">Please fill out the reCAPTCHA box at the end to confirm that you're human. You may need to supply your image files again too.</p>
 {% endif %}
 {% endblock %}
 
 {% block content %}
-<form id="submissionForm" method="POST" enctype="multipart/form-data" action="{{ url_for('submit') }}">
-    {{ form.csrf_token }}
-    <ul>
-        <li>{{ render_field(form.nym) }}</li>
-        <li>{{ render_field(form.email) }}</li>
-        <li>{{ render_field(form.introduction) }}</li>
-        {% for picture_form in form.pictures %}
-        <li class="picture-form">
-            <ul>
-                <li>
-                    {{ render_field(picture_form.upload, class="picture-upload-input") }}
-                    <img src="" class="picture-form-preview" style="width: 200px;">
-                </li>
-                <li>{{ render_field(picture_form.title) }}</li>
-                <li>{{ render_field(picture_form.picture_description) }}</li>
-                <li>{{ picture_form.date_taken.label }}{{ picture_form.date_taken(class='dtpick') }}</li>
-            </ul>
-            {% if loop.index != 1 %}
-            <button type="button" class="btn btn-sm btn-warning remove-picture">remove picture</a>
-            {% endif %}
-        </li>
-        {% endfor %}
-    </ul>
-    <button type="button" class="btn btn-sm btn-success" id="add-picture">Add another picture</button>
-    {% if config.LOCAL == False %}
-        {{ form.recaptcha }}
-    {% endif %}
-    <br/>
-    <input type="submit" value="Submit" id="submitButton">
-</form>
+    <form id="submissionForm" method="POST" enctype="multipart/form-data" action="{{ url_for('submit') }}">
+        {{ form.csrf_token }}
+        {{ render_field(form.nym, class="form-control col-sm-2") }}<br/>
+        {{ render_field(form.email, class="form-control") }}<br/>
+        {{ render_textarea_field(form.introduction, 8, 60, class="form-control") }}<br/>
+            {% for picture_form in form.pictures %}
+            <dl class="picture-form">
+                <div class="card row">
+                    <dt class="card-header">Picture {{ loop.index }}</dt>
+                    <div class="card-block">
+                        <dd>
+                            {{ render_field(picture_form.upload, class="form-control picture-upload-input") }}
+                            <img src="" class="picture-form-preview" style="width: 200px;">
+                        </dd>
+                        <dd>{{ render_field(picture_form.title, class="form-control") }}</dd>
+                        <dd>{{ render_textarea_field(picture_form.picture_description, 4, 50, class="form-control") }}</dd>
+                        <dd>{{ picture_form.date_taken.label }}{{ picture_form.date_taken(class='dtpick form-control') }}</dd>
+                        <dd>{{ render_textarea_field(picture_form.place_taken, 3, 50, class="form-control") }}</dd>
+                    </div>
+                    </dt>
+                    {% if loop.index != 1 %}
+                    <button type="button" class="btn btn-sm btn-warning remove-picture">remove picture</button>
+                    {% endif %}
+                </div>
+            </dl>
+            {% endfor %}
+        <button type="button" class="btn btn-sm btn-success" id="add-picture">Add another picture</button>
+        {% if config.LOCAL == False %}
+            {{ form.recaptcha }}
+        {% endif %}
+        <br/>
+        <input type="submit" value="Submit" id="submitButton">
+    </div>
+    </form>
 <br/>
 <br/>
 <br/>

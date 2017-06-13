@@ -17,6 +17,7 @@ from werkzeug.utils import secure_filename
 from app import app, db
 from forms import SubmissionAdminForm, SubmissionForm
 from models import User, Picture, Submission
+import tasks
 
 
 ## Authorization
@@ -56,7 +57,7 @@ def requires_auth(f):
 
 def not_authorized():
     flash("You aren't authorized to view that post.")
-    return redirect(url_for('.home'))
+    return redirect(url_for('index'))
 
 
 ## View functions
@@ -113,6 +114,7 @@ def submit():
             submission.pictures.append(Picture(
                     title=picture_form.title.data,
                     date_taken=picture_form.date_taken.data,
+                    place_taken=picture_form.place_taken.data,
                     picture_description=picture_form.picture_description.data,
                     file_location=file_path
             ))
@@ -136,9 +138,13 @@ def admin_list():
     pending_submissions = Submission.query.filter_by(status='pending').all()
     return render_template('admin_list.html', pending_submissions=pending_submissions)
 
-@app.route('/admin/<submission_id>', methods=['GET'])
+@app.route('/admin/<submission_id>', methods=['GET', 'POST'])
 @requires_auth
 def admin_detail(submission_id):
     submission = Submission.query.get_or_404(submission_id)
     form = SubmissionAdminForm()
+    if form.validate_on_submit():
+        flash("Submission %s added to worker queue for upload." % submission_id)
+        tasks.make_draft_post.delay(submission_id)
+        return redirect(url_for('admin_list'))
     return render_template('admin_detail.html', submission=submission)
