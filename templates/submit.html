@@ -31,6 +31,7 @@
 {% endblock %}
 
 {% block content %}
+<div class="row"><div class="col-sm-8">
     <form id="submissionForm" method="POST" enctype="multipart/form-data" action="{{ url_for('submit') }}">
         {{ form.csrf_token }}
         {{ render_field(form.nym, class="form-control col-sm-2") }}<br/>
@@ -65,6 +66,7 @@
         <input type="submit" value="Submit" id="submitButton">
     </div>
     </form>
+</div></div>
 <br/>
 <br/>
 <br/>
