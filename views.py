@@ -81,13 +81,25 @@ def submit():
         return render_template('submit.html', 
                 form=form, config=app.config, slice_index=slice_index)        
     if form.validate_on_submit():
+        if not app.config['LOCAL']:
+            ip_address=str(request.remote_addr)
+            one_hour_ago = datetime.datetime.now() - datetime.timedelta(hours=1)
+            recent_by_ip = Submission.query.filter(
+                    Submission.ip_address == ip_address,
+                    Submission.datetime_submitted >= one_hour_ago
+            ).all()
+            if len(recent_by_ip) > app.config['MAX_SUBMISSIONS_PER_HOUR']:
+                flash("Your IP address has been used to submit several posts recently. "
+                        "Please try again in an hour or so."
+                )
+                return redirect(url_for('submit'))
         submission = Submission(
                 nym=form.nym.data,
                 email=form.email.data,
                 introduction=form.introduction.data,
                 status='pending',
                 datetime_submitted=datetime.datetime.now(),
-                ip_address=str(request.remote_addr)
+                ip_address=ip_address
         )
         submission_prefix = str(uuid.uuid1())
         for i, picture_form in enumerate(pictures_to_parse):

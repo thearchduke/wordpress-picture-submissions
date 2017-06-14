@@ -31,16 +31,19 @@
   </head>
   <body>
   <div class="container">
-  <div class="jumbotron">{% block jumbotron %}{% endblock %}</div>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul class=flashes>
-        {% for message in messages %}
-          <li>{{ message }}</li>
-        {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
+  <div class="jumbotron">{% block jumbotron %}{% endblock %}
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+       <p class="lead">
+         <ul>
+          {% for message in messages %}
+            <li style="color: green;">{{ message }}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      </p>
+      {% endwith %}
+  </div>
   {% block content %}
   {% endblock %}
   </div>

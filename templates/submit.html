@@ -25,7 +25,7 @@
 
 {% block jumbotron %}
 <h1 class="display-4">Submit pictures for On The Road!</h1>
-    <p>[Instructions from Alain!]</p>
+    <p class="lead">[Instructions from Alain!]</p>
 {% if config.LOCAL == False and form.recaptcha.errors %}
     <p class="lead" style="color: red;">Please fill out the reCAPTCHA box at the end to confirm that you're human. You may need to supply your image files again too.</p>
 {% endif %}
