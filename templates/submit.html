@@ -8,7 +8,7 @@
 {% endmacro %}
 
 {% macro render_textarea_field(field, rows, cols, class=None) %}
-    {{ field.label }}: <br/>{{ field(rows=rows, cols=cols) }}
+    {{ field.label }}: <br/>{% if class %}{{ field(rows=rows, cols=cols, class_=class) }}{% else %}{{ field(rows=rows, cols=cols, class_=class) }}{% endif %}
     {% if field.errors %}
         {% for error in field.errors %}
             <span style="color: red;">{{ error }}</span><br/>
