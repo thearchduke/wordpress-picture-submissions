@@ -30,11 +30,11 @@ celery = make_celery(app)
 @celery.task()
 def make_draft_post(submission_id):
     submission = Submission.query.get(submission_id)
-    writer = _BJPostWriter(submission)
+    writer = BJPostWriter(submission)
     return writer.make_draft_post()
 
 
-class _BJPostWriter(object):
+class BJPostWriter(object):
     def __init__(self, submission):
         self.wp = WordpressAPI()
         self.submission = submission
@@ -50,6 +50,7 @@ class _BJPostWriter(object):
                 )
                 logging.error(err)
                 raise IOError(err)
+                break
             self.upload_results.append((picture, r.json()))
 
     def write_post(self):
@@ -64,7 +65,8 @@ class _BJPostWriter(object):
         r = self.wp.post('/wp/v2/posts', params={
                 'title': 'On the Road', 
                 'status': 'draft',
-                'content': self.post_text
+                'content': self.post_text,
+                'categories': ['On The Road']
         })
         if r.status_code != 201:
             err = "Failed to write post for Submission %s, reason: %s" % (
