@@ -66,19 +66,23 @@ class BJPostWriter(object):
                 'title': 'On the Road', 
                 'status': 'draft',
                 'content': self.post_text,
-                'categories': ['On The Road']
+                #'categories': ['On The Road']
+                #TODO FIXME wordpress categories are listed by ID here
         })
         if r.status_code != 201:
             err = "Failed to write post for Submission %s, reason: %s" % (
-                    self.submission.id, r.reason
+                    self.submission.id, r.text
             )
             logging.error(err)
             raise IOError(err)
         return r.json()
 
     def make_draft_post(self):
-        self.upload_pictures()
-        self.write_post()
+        try:
+            self.upload_pictures()
+            self.write_post()
+        except:
+            return False
         self.submission.status = 'submitted'
         db.session.add(self.submission)
         db.session.commit()

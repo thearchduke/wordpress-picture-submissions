@@ -25,7 +25,13 @@
 
 {% block jumbotron %}
 <h1 class="display-4">Submit pictures for On The Road!</h1>
-    <p class="lead">[Instructions from Alain!]</p>
+    <p class="lead">Use this form to submit up to 7 pictures for the On the Road feature. You will need to submit your screenname and the email address that you use to comment. These will be used for verification, but only your screenname will be used in the post. Optional fields are so-marked.</p>
+
+    <p class="lead">Should you have more than 7 pictures to submit, a zip archive, a movie, one or more links for pictures hosted online, or if you are a reader but not a commenter and so fail verification, feel free to <a href="mailto:picstopost@balloon-juice.com?subject=Picture to Post on Balloon Juice&body=For each picture, please supply: Where it was taken: When: Commenter nym: Other notes or info about the picture:">email them.</a></p>
+ 
+    <p class="lead">Since this form is new, we are actively looking for feedback, so please let us know what you like and don't like about this form.</p>
+ 
+    <p class="lead">Thanks!</p>
 {% if config.LOCAL == False and form.recaptcha.errors %}
     <p class="lead" style="color: red;">Please fill out the reCAPTCHA box at the end to confirm that you're human. You may need to supply your image files again too.</p>
 {% endif %}

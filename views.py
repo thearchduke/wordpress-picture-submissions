@@ -155,8 +155,8 @@ def admin_list():
         try:
             result = writer.make_draft_post()
         except:
-            flash("Something went wrong with the posting, but the pictures "
-                    "seem to have uploaded..."
+            flash("Something went wrong with the posting. Check to see "
+                    "if the pictures have uploaded, and delete them if so..."
             )
             return redirect(url_for('admin_list'))
         flash("Alright, there should be a new draft post up at BJ!")
