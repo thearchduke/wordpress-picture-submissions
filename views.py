@@ -1,6 +1,7 @@
 import datetime
 from functools import wraps
 import os
+import sys
 import uuid
 
 from flask import (
@@ -113,7 +114,7 @@ def submit():
             file_name = submission_prefix + str(i) + extension
             file_path = os.path.join(
                     app.config['APPLICATION_WORKING_DIRECTORY'], 
-                    'submissions',
+                    'static/submissions',
                     file_name
             )
             try:
@@ -144,19 +145,46 @@ def submit():
 def thanks():
     return render_template('thanks.html')
 
-@app.route('/admin/', methods=['GET'])
+@app.route('/admin/', methods=['GET', 'POST'])
 @requires_auth
 def admin_list():
-    pending_submissions = Submission.query.filter_by(status='pending').all()
-    return render_template('admin_list.html', pending_submissions=pending_submissions)
-
-@app.route('/admin/<submission_id>', methods=['GET', 'POST'])
-@requires_auth
-def admin_detail(submission_id):
-    submission = Submission.query.get_or_404(submission_id)
     form = SubmissionAdminForm()
     if form.validate_on_submit():
-        flash("Submission %s added to worker queue for upload." % submission_id)
-        tasks.make_draft_post.delay(submission_id)
-        return redirect(url_for('admin_list'))
-    return render_template('admin_detail.html', submission=submission)
+        submission = Submission.query.get(form.submission_id.data)
+        writer = tasks.BJPostWriter(submission)
+        try:
+            result = writer.make_draft_post()
+        except:
+            flash("Something went wrong with the posting, but the pictures "
+                    "seem to have uploaded..."
+            )
+            return redirect(url_for('admin_list'))
+        flash("Alright, there should be a new draft post up at BJ!")
+    pending_submissions = (Submission.query.filter_by(status='pending')
+            .order_by(Submission.datetime_submitted.desc()).all()
+    )
+    return render_template(
+            'admin_list.html', form=form,
+            pending_submissions=pending_submissions)
+
+@app.route('/admin/delete', methods=['POST'])
+@requires_auth
+def admin_delete():
+    form = SubmissionAdminForm()
+    if form.validate_on_submit():
+        submission = Submission.query.get(form.submission_id.data)
+        errs = ""
+        for picture in submission.pictures:
+            try:
+                os.delete(picture.file_location)
+            except:
+                errs += str(sys.exc_info()[0])
+                errs += "....."
+        db.session.delete(submission)
+        db.session.commit()
+        flash("OK, that's been deleted.")
+        if errs != "":
+            flash("With the following errors: %s" % errs)
+    else:
+        flash("Something went wrong deleting that submission.")
+    return redirect(url_for('admin_list'))

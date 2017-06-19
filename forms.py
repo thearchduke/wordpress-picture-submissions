@@ -67,4 +67,4 @@ class SubmissionForm(FlaskForm):
         return result
 
 class SubmissionAdminForm(FlaskForm):
-    pass
+    submission_id = fields.HiddenField()

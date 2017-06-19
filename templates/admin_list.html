@@ -12,6 +12,33 @@
 
 {% block content %}
     {% for submission in pending_submissions %}
-        <a href="{{ url_for('admin_detail', submission_id=submission.id) }}">{{ submission }}</a>
+    <div class="card">
+        <div class="card-block">
+            <h4 class="card-title">{{ submission.datetime_submitted }}</h4>
+            <h6 class="card-subtitle">Submission {{ submission.id }}</h6>
+            <p class="card-text">{{ submission.introduction }}</p>
+            <ul class="list-group list-group-flush">
+            {% for picture in submission.pictures %}
+                <li class="list-group-item">
+                    <p>{{ picture.picture_description }}<img style="width: 40%;" src="{{ url_for('static', filename=picture.img_src) }}"/></p>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+        <div class="card-block">
+            <form method="POST" action="{{ url_for('admin_list') }}">
+                {{ form.csrf_token }}
+                {{ form.submission_id(value=submission.id) }}
+                <input type="submit" value="Upload as draft to Balloon-Juice" class="btn btn-sm btn-success">
+            </form>
+        </div>
+        <div class="card-block">
+            <form method="POST" action="{{ url_for('admin_delete') }}">
+                {{ form.csrf_token }}
+                {{ form.submission_id(value=submission.id) }}
+                <input type="submit" value="Delete submission" class="btn btn-sm btn-warning" onclick="return confirm('Do you really want to delete this?');return false;">
+            </form>
+        </div>
+    </div>
     {% endfor %}
 {% endblock %}

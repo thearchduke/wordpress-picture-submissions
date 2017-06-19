@@ -1,3 +1,5 @@
+from passlib.hash import sha256_crypt
+
 from app import db
 
 
@@ -55,4 +57,8 @@ class Picture(db.Model):
     picture_description = db.Column(db.Text())
     # meta
     file_location = db.Column(db.String(1024))
-    
+
+    @property
+    def img_src(self):
+        return '/'.join(self.file_location.split('/')[-2:])
+        
