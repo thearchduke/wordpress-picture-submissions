@@ -36,7 +36,8 @@ def make_draft_post(submission_id):
 
 class BJPostWriter(object):
     def __init__(self, submission):
-        self.wp = WordpressAPI()
+        credentials = 'test' if app.config['TESTING'] else 'production'
+        self.wp = WordpressAPI(credentials=credentials)
         self.submission = submission
 
     def upload_pictures(self):

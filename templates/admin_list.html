@@ -14,7 +14,7 @@
     {% for submission in pending_submissions %}
     <div class="card">
         <div class="card-block">
-            <h4 class="card-title">{{ submission.datetime_submitted }}</h4>
+            <h4 class="card-title">{{ submission.nym }} on {{ submission.datetime_submitted }}</h4>
             <h6 class="card-subtitle">Submission {{ submission.id }}</h6>
             <h6 class="card-subtitle">(<a href="mailto:{{ submission.email }}">email commenter</a>)</h6>
             <p class="card-text">{{ submission.introduction }}</p>
