@@ -13,6 +13,7 @@ from flask import (
         session, 
         url_for, 
 )
+import pytz
 from werkzeug.utils import secure_filename
 
 from app import app, db
@@ -60,6 +61,15 @@ def not_authorized():
     flash("You aren't authorized to view that post.")
     return redirect(url_for('index'))
 
+def ip_throttled(addr):
+    one_hour_ago = datetime.datetime.now(pytz.timezone('US/Eastern')) - datetime.timedelta(hours=1)
+    recent_by_ip = Submission.query.filter(
+            Submission.ip_address == ip_address,
+            Submission.datetime_submitted >= one_hour_ago
+    ).all()
+    if len(recent_by_ip) > app.config['MAX_SUBMISSIONS_PER_HOUR']:
+        return True
+    return False
 
 ## View functions
 @app.route('/', methods=['GET'])
@@ -83,13 +93,7 @@ def submit():
                 form=form, config=app.config, slice_index=slice_index)        
     if form.validate_on_submit():
         if not app.config['LOCAL']:
-            ip_address=str(request.remote_addr)
-            one_hour_ago = datetime.datetime.now() - datetime.timedelta(hours=1)
-            recent_by_ip = Submission.query.filter(
-                    Submission.ip_address == ip_address,
-                    Submission.datetime_submitted >= one_hour_ago
-            ).all()
-            if len(recent_by_ip) > app.config['MAX_SUBMISSIONS_PER_HOUR']:
+            if ip_throttled(request.remote_addr):
                 flash("Your IP address has been used to submit several posts recently. "
                         "Please try again in an hour or so."
                 )
@@ -99,7 +103,7 @@ def submit():
                 email=form.email.data,
                 introduction=form.introduction.data,
                 status='pending',
-                datetime_submitted=datetime.datetime.now(),
+                datetime_submitted=datetime.datetime.now(pytz.timezone('US/Eastern')),
                 ip_address=ip_address
         )
         submission_prefix = str(uuid.uuid1())
@@ -166,6 +170,14 @@ def admin_list():
     return render_template(
             'admin_list.html', form=form,
             pending_submissions=pending_submissions)
+
+@app.route('/admin/submitted/', methods=['GET', 'POST'])
+@requires_auth
+def admin_list_submitted():
+    submissions = (Submission.query.filter_by(status='submitted')
+            .order_by(Submission.datetime_submitted.desc()).all()
+    )
+    return render_template('admin_list_submitted.html', submissions=submissions)
 
 @app.route('/admin/delete', methods=['POST'])
 @requires_auth

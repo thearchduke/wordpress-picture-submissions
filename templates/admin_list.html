@@ -16,6 +16,7 @@
         <div class="card-block">
             <h4 class="card-title">{{ submission.datetime_submitted }}</h4>
             <h6 class="card-subtitle">Submission {{ submission.id }}</h6>
+            <h6 class="card-subtitle">(<a href="mailto:{{ submission.email }}">email commenter</a>)</h6>
             <p class="card-text">{{ submission.introduction }}</p>
             <ul class="list-group list-group-flush">
             {% for picture in submission.pictures %}
