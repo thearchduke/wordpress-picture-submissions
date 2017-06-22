@@ -188,7 +188,7 @@ def admin_delete():
         errs = ""
         for picture in submission.pictures:
             try:
-                os.delete(picture.file_location)
+                os.remove(picture.file_location)
             except:
                 errs += str(sys.exc_info()[0])
                 errs += "....."
