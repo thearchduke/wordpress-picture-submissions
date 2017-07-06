@@ -64,7 +64,7 @@ def not_authorized():
 def ip_throttled(addr):
     one_hour_ago = datetime.datetime.now(pytz.timezone('US/Eastern')) - datetime.timedelta(hours=1)
     recent_by_ip = Submission.query.filter(
-            Submission.ip_address == ip_address,
+            Submission.ip_address == addr,
             Submission.datetime_submitted >= one_hour_ago
     ).all()
     if len(recent_by_ip) > app.config['MAX_SUBMISSIONS_PER_HOUR']:
@@ -104,7 +104,7 @@ def submit():
                 introduction=form.introduction.data,
                 status='pending',
                 datetime_submitted=datetime.datetime.now(pytz.timezone('US/Eastern')),
-                ip_address=ip_address
+                ip_address=request.remote_addr
         )
         submission_prefix = str(uuid.uuid1())
         for i, picture_form in enumerate(pictures_to_parse):
