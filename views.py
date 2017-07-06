@@ -238,6 +238,8 @@ def submit_quote():
         ))
         db.session.add(new_quote)
         db.session.commit()
+        flash("Thanks for your submission!")
+        return redirect(url_for('submit_quote'))
     return render_template('submit_quote.html', form=form, config=app.config)
 
 
