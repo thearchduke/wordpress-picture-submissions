@@ -25,7 +25,7 @@
 
 {% block jumbotron %}
 <h1 class="display-4">Submit quotes for Balloon-Juice!</h1>
-    <p class="lead">Use this form to submit quote suggestions for the pie filter and rotating tagline. You will need to submit your screenname and the email address that you use to comment. These will be used for verification only and to prevent spam.</p>
+    <p class="lead">Use this form to submit quote suggestions for the pie filter and rotating tagline. You will need to submit your screenname and the email address that you use to comment. These will be used for verification only and to prevent spam. One quote per submission, please. Your IP address is limited to ten submissions per hour.</p>
 
     <p class="lead">If something goes wrong, go ahead and post the quote(s) on the blog instead. This is still a work in progress.</p>
  
@@ -41,7 +41,7 @@
         {{ form.csrf_token }}
         {{ render_field(form.nym, class="form-control col-sm-2") }}<br/>
         {{ render_field(form.email, class="form-control") }}<br/>
-        {{ render_textarea_field(form.quote, 8, 60, class="form-control") }}<br/>
+        {{ render_textarea_field(form.quote, 2, 20, class="form-control") }}<br/>
         {{ render_field(form.quote_type, class="form-control") }}<br/>
         {% if config.LOCAL == False %}
             {{ form.recaptcha }}
