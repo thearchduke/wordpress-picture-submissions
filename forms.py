@@ -84,7 +84,7 @@ class OTRSubmissionAdminForm(FlaskForm):
 
 
 class QuoteSubmissionForm(BJSubmissionForm):
-    quote = fields.TextAreaField('Quote(s)', validators=[DataRequired()])
+    quote = fields.TextAreaField('Quote', validators=[DataRequired()])
     quote_type = fields.SelectField(
             'Quote type', 
             choices=[('pie', 'Pie Filter'), ('rotating', 'Rotating')],
