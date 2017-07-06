@@ -26,14 +26,14 @@
             </ul>
         </div>
         <div class="card-block">
-            <form method="POST" action="{{ url_for('admin_list') }}">
+            <form method="POST" action="{{ url_for('admin_list_on_the_road') }}">
                 {{ form.csrf_token }}
                 {{ form.submission_id(value=submission.id) }}
                 <input type="submit" value="Upload as draft to Balloon-Juice" class="btn btn-sm btn-success">
             </form>
         </div>
         <div class="card-block">
-            <form method="POST" action="{{ url_for('admin_delete') }}">
+            <form method="POST" action="{{ url_for('admin_delete_on_the_road') }}">
                 {{ form.csrf_token }}
                 {{ form.submission_id(value=submission.id) }}
                 <input type="submit" value="Delete submission" class="btn btn-sm btn-warning" onclick="return confirm('Do you really want to delete this?');return false;">

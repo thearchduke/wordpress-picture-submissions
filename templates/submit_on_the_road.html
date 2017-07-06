@@ -39,7 +39,7 @@
 
 {% block content %}
 <div class="row"><div class="col-sm-8">
-    <form id="submissionForm" method="POST" enctype="multipart/form-data" action="{{ url_for('submit') }}">
+    <form id="submissionForm" method="POST" enctype="multipart/form-data" action="{{ url_for('submit_on_the_road') }}">
         {{ form.csrf_token }}
         {{ render_field(form.nym, class="form-control col-sm-2") }}<br/>
         {{ render_field(form.email, class="form-control") }}<br/>
@@ -71,7 +71,6 @@
         {% endif %}
         <br/>
         <input type="submit" value="Submit" id="submitButton">
-    </div>
     </form>
 </div></div>
 <br/>

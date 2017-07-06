@@ -61,4 +61,14 @@ class Picture(db.Model):
     @property
     def img_src(self):
         return '/'.join(self.file_location.split('/')[-2:])
-        
+
+
+class Quote(db.Model):
+    # sql
+    id = db.Column(db.Integer, primary_key=True)
+    nym = db.Column(db.String(1024))
+    email = db.Column(db.String(1024))
+    quote = db.Column(db.Text())
+    quote_type = db.Column(db.String(64))
+    ip_address = db.Column(db.String(256))
+    datetime_submitted = db.Column(db.DateTime())

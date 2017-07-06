@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Quotes | Admin{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block jumbotron %}
+<h1>Quotes | Admin</h1>
+<p>A list of submitted quotes.</p>
+{% endblock %}
+
+{% block content %}
+    {% for quote in all_quotes %}
+    <div class="card">
+        <div class="card-block">
+            <h4 class="card-title">{{ quote.nym }} on {{ quote.datetime_submitted }}</h4>
+            <h6 class="card-subtitle">
+            {% if quote.quote_type == 'pie' %}
+                Pie filter
+            {% else %}
+                Quote rotator
+            {% endif %}
+            </h6>
+            <p class="card-text">{{ quote.quote }}</p>
+        </div>
+        <div class="card-block">
+            <form method="POST" action="{{ url_for('admin_delete_quote') }}">
+                {{ form.csrf_token }}
+                {{ form.quote_id(value=quote.id) }}
+                <input type="submit" value="Delete submission" class="btn btn-sm btn-warning" onclick="return confirm('Do you really want to delete this?');return false;">
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
