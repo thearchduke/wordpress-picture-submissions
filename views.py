@@ -1,5 +1,6 @@
 import datetime
 from functools import wraps
+import logging
 import os
 import sys
 import uuid
@@ -17,8 +18,13 @@ import pytz
 from werkzeug.utils import secure_filename
 
 from app import app, db
-from forms import SubmissionAdminForm, SubmissionForm
-from models import User, Picture, Submission
+from forms import (
+        OTRSubmissionAdminForm, 
+        OTRSubmissionForm, 
+        QuoteAdminForm,
+        QuoteSubmissionForm
+)
+from models import User, Picture, Submission, Quote
 import tasks
 
 
@@ -61,43 +67,45 @@ def not_authorized():
     flash("You aren't authorized to view that post.")
     return redirect(url_for('index'))
 
-def ip_throttled(addr):
+def ip_throttled(submission_type, addr, max_submissions=app.config['MAX_SUBMISSIONS_PER_HOUR']):
     one_hour_ago = datetime.datetime.now(pytz.timezone('US/Eastern')) - datetime.timedelta(hours=1)
-    recent_by_ip = Submission.query.filter(
-            Submission.ip_address == addr,
-            Submission.datetime_submitted >= one_hour_ago
+    recent_by_ip = submission_type.query.filter(
+            submission_type.ip_address == addr,
+            submission_type.datetime_submitted >= one_hour_ago
     ).all()
-    if len(recent_by_ip) > app.config['MAX_SUBMISSIONS_PER_HOUR']:
+    if len(recent_by_ip) > max_submissions:
         return True
     return False
 
 ## View functions
 @app.route('/', methods=['GET'])
 def index():
-    return redirect(url_for('submit'))
+    return redirect(url_for('submit_on_the_road'))
 
-@app.route('/submit/', methods=['GET', 'POST'])
-def submit():
+
+## On The Road
+@app.route('/on-the-road/submit', methods=['GET', 'POST'])
+def submit_on_the_road():
     try:
-        form = SubmissionForm()
+        form = OTRSubmissionForm()
         pictures_to_parse = [p for p in form.pictures if p.upload.data]
     except:
         flash("Something went wrong. Make sure that all of your pictures "
                 "are smaller than %sMB." % app.config['MAX_CONTENT_MB']
         )
-        return redirect(url_for('submit'))
+        return redirect(url_for('submit_on_the_road'))
     slice_index = len(pictures_to_parse) if pictures_to_parse else 1
     if request.method == 'POST' and not pictures_to_parse:
         flash("You need to submit some pictures!")
-        return render_template('submit.html', 
+        return render_template('submit_on_the_road.html', 
                 form=form, config=app.config, slice_index=slice_index)        
     if form.validate_on_submit():
         if not app.config['LOCAL']:
-            if ip_throttled(request.remote_addr):
+            if ip_throttled(Submission, request.remote_addr):
                 flash("Your IP address has been used to submit several posts recently. "
                         "Please try again in an hour or so."
                 )
-                return redirect(url_for('submit'))
+                return redirect(url_for('submit_on_the_road'))
         submission = Submission(
                 nym=form.nym.data,
                 email=form.email.data,
@@ -110,7 +118,7 @@ def submit():
         for i, picture_form in enumerate(pictures_to_parse):
             if not picture_form.validate(request):
                 for error in picture_form.errors: print error
-                return render_template('submit.html', 
+                return render_template('submit_on_the_road.html', 
                         form=form, config=app.config, slice_index=slice_index)
             picture_file = picture_form.upload.data
             extension = secure_filename(picture_form.upload.data.filename).split('.')[-1]
@@ -137,22 +145,22 @@ def submit():
             ))
         db.session.add(submission)
         db.session.commit()
-        return redirect(url_for('thanks'))
+        return redirect(url_for('thanks_on_the_road'))
     if form.errors:
         print form.errors
     return render_template(
-            'submit.html', form=form, config=app.config, 
+            'submit_on_the_road.html', form=form, config=app.config, 
             slice_index=slice_index
     )
 
-@app.route('/thanks/', methods=['GET'])
-def thanks():
-    return render_template('thanks.html')
+@app.route('/on-the-road/thanks/', methods=['GET'])
+def thanks_on_the_road():
+    return render_template('thanks_on_the_road.html')
 
-@app.route('/admin/', methods=['GET', 'POST'])
+@app.route('/on-the-road/admin/', methods=['GET', 'POST'])
 @requires_auth
-def admin_list():
-    form = SubmissionAdminForm()
+def admin_list_on_the_road():
+    form = OTRSubmissionAdminForm()
     if form.validate_on_submit():
         submission = Submission.query.get(form.submission_id.data)
         writer = tasks.BJPostWriter(submission)
@@ -162,27 +170,27 @@ def admin_list():
             flash("Something went wrong with the posting. Check to see "
                     "if the pictures have uploaded, and delete them if so..."
             )
-            return redirect(url_for('admin_list'))
+            return redirect(url_for('admin_list_on_the_road'))
         flash("Alright, there should be a new draft post up at BJ!")
     pending_submissions = (Submission.query.filter_by(status='pending')
             .order_by(Submission.datetime_submitted.desc()).all()
     )
     return render_template(
-            'admin_list.html', form=form,
+            'admin_list_on_the_road.html', form=form,
             pending_submissions=pending_submissions)
 
-@app.route('/admin/submitted/', methods=['GET', 'POST'])
+@app.route('/on-the-road/admin/submitted/', methods=['GET', 'POST'])
 @requires_auth
-def admin_list_submitted():
+def admin_list_submitted_on_the_road():
     submissions = (Submission.query.filter_by(status='submitted')
             .order_by(Submission.datetime_submitted.desc()).all()
     )
-    return render_template('admin_list_submitted.html', submissions=submissions)
+    return render_template('admin_list_submitted_on_the_road.html', submissions=submissions)
 
-@app.route('/admin/delete', methods=['POST'])
+@app.route('/on-the-road/admin/delete/', methods=['POST'])
 @requires_auth
-def admin_delete():
-    form = SubmissionAdminForm()
+def admin_delete_on_the_road():
+    form = OTRSubmissionAdminForm()
     if form.validate_on_submit():
         submission = Submission.query.get(form.submission_id.data)
         errs = ""
@@ -199,4 +207,57 @@ def admin_delete():
             flash("With the following errors: %s" % errs)
     else:
         flash("Something went wrong deleting that submission.")
-    return redirect(url_for('admin_list'))
+    return redirect(url_for('admin_list_on_the_road'))
+
+
+## Quote submission
+@app.route('/quotes', methods=['GET'])
+def quotes():
+    return redirect(url_for('submit_quote'))
+
+@app.route('/quotes/submit/', methods=['GET', 'POST'])
+def submit_quote():
+    form = QuoteSubmissionForm()
+    if form.validate_on_submit():
+        if not app.config['LOCAL']:
+            if ip_throttled(Quote, request.remote_addr, max_submissions=10):
+                flash("Your IP address has been used to submit several posts recently. "
+                        "Please try again in an hour or so."
+                )
+                return redirect(url_for('submit_quote'))
+        new_quote = Quote(
+                nym=form.nym.data,
+                email=form.email.data,
+                quote=form.quote.data,
+                quote_type=form.quote_type.data,
+                datetime_submitted=datetime.datetime.now(pytz.timezone('US/Eastern')),
+                ip_address=request.remote_addr
+        )
+        logging.info("added new quote '%s' from %s" % (
+                form.quote.data, form.nym.data
+        ))
+        db.session.add(new_quote)
+        db.session.commit()
+    return render_template('submit_quote.html', form=form, config=app.config)
+
+
+@app.route('/quotes/admin/', methods=['GET'])
+@requires_auth
+def admin_list_quote():
+    form = QuoteAdminForm()
+    all_quotes = Quote.query.order_by(Quote.datetime_submitted.desc()).all()
+    return render_template(
+            'admin_list_quote.html', form=form, all_quotes=all_quotes
+    )
+
+
+@app.route('/quotes/admin/delete/', methods=['POST'])
+@requires_auth
+def admin_delete_quote():
+    form = QuoteAdminForm()
+    if form.validate_on_submit():
+        quote = Quote.query.get(form.quote_id.data)
+        db.session.delete(quote)
+        db.session.commit()
+        flash("OK, that's been deleted.")
+    return redirect(url_for('admin_list_quote'))

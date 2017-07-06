@@ -32,11 +32,34 @@ class PictureForm(Form):
     )
 
 
-class SubmissionForm(FlaskForm):
+class BJSubmissionForm(FlaskForm):
     nym = fields.StringField('Screenname', validators=[DataRequired()])
     email = fields.StringField(
             'Email (private, for verification and feedback)',
             validators=[DataRequired()])
+
+    if not config.LOCAL:
+        recaptcha = RecaptchaField()
+
+    verification_error = ("Something went wrong verifying this "
+            "email and username combination. If you haven't "
+            "commented at Balloon-Juice before, go comment in an "
+            "active thread, wait for it to get approved, and come "
+            "submit again."
+    )
+
+    def validate(form):
+        if not Form.validate(form):
+            return False
+        result = True
+        wp = wordpress.WordpressAPI()
+        if not wp.verify_nym(form.nym.data, form.email.data):
+            form.email.errors.append(form.verification_error)
+            result = False
+        return result
+
+
+class OTRSubmissionForm(BJSubmissionForm):
     introduction = fields.TextAreaField(
             'General introduction/description', validators=[DataRequired()]
     )
@@ -47,24 +70,33 @@ class SubmissionForm(FlaskForm):
             validators=[Optional()]
     )
 
-    if not config.LOCAL:
-        recaptcha = RecaptchaField()
+    verification_error = ("Something went wrong verifying this "
+            "email and username combination. If you haven't "
+            "commented at Balloon-Juice before, go comment in an "
+            "active thread, wait for it to get approved, and come "
+            "submit your pictures again. Alternatively, email your "
+            "pictures to please@getmechamot.com"
+    )
 
-    def validate(form):
-        if not Form.validate(form):
-            return False
-        result = True
-        wp = wordpress.WordpressAPI()
-        if not wp.verify_nym(form.nym.data, form.email.data):
-            form.email.errors.append("Something went wrong verifying this "
-                    "email and username combination. If you haven't "
-                    "commented at Balloon-Juice before, go comment in an "
-                    "active thread, wait for it to get approved, and come "
-                    "submit your pictures again. Alternatively, email your "
-                    "pictures to please@getmechamot.com"
-            )
-            result = False
-        return result
 
-class SubmissionAdminForm(FlaskForm):
+class OTRSubmissionAdminForm(FlaskForm):
     submission_id = fields.HiddenField()
+
+
+class QuoteSubmissionForm(BJSubmissionForm):
+    quote = fields.TextAreaField('Quote(s)', validators=[DataRequired()])
+    quote_type = fields.SelectField(
+            'Quote type', 
+            choices=[('pie', 'Pie Filter'), ('rotating', 'Rotating')],
+            validators=[DataRequired()]
+    )
+
+    verification_error = ("Something went wrong verifying this "
+            "email and username combination. If you haven't "
+            "commented at Balloon-Juice before, just go ahead and "
+            "leave your quote suggestion in a comment."
+    )
+
+
+class QuoteAdminForm(FlaskForm):
+    quote_id = fields.HiddenField()
