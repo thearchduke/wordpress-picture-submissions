@@ -33,7 +33,7 @@ def check_auth(username, password):
     """This function is called to check if a username /
     password combination is valid.
     """
-    if app.config['TESTING'] == True and username == 'admin' and password == 'admin':
+    if app.config['TESTING'] == True and username == 'admin' and password == 'tunch':
         return True
     u = User.query.filter_by(username=username).first()
     if u and u.verify_password(password):
