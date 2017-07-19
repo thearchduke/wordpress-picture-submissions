@@ -74,6 +74,7 @@ def ip_throttled(submission_type, addr, max_submissions=app.config['MAX_SUBMISSI
             submission_type.datetime_submitted >= one_hour_ago
     ).all()
     if len(recent_by_ip) > max_submissions:
+        logging.info("throttled submission by %s" % addr)
         return True
     return False
 
@@ -240,6 +241,9 @@ def submit_quote():
         db.session.commit()
         flash("Thanks for your submission!")
         return redirect(url_for('submit_quote'))
+    if form.errors:
+        errs = ';'.join(str(err) for err in form.errors)
+        logging.debug(errs)
     return render_template('submit_quote.html', form=form, config=app.config)
 
 
