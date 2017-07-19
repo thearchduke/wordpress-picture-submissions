@@ -6,3 +6,5 @@ venv-on_the_road/*
 submissions/*
 *.db
 static/submissions/*
+notes.md
+

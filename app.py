@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import datetime
 from functools import wraps
+import logging
 import os
 import sys
 import uuid
@@ -18,3 +19,9 @@ app = Flask('on_the_road')
 app.config.from_object('config')
 db = SQLAlchemy(app)
 configure_uploads(app, (imagefiles,))
+
+@app.before_first_request
+def setup_logging():
+    # In production mode, add log handler to sys.stderr.
+    app.logger.addHandler(logging.StreamHandler())
+    app.logger.setLevel(logging.INFO)

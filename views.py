@@ -1,6 +1,5 @@
 import datetime
 from functools import wraps
-import logging
 import os
 import sys
 import uuid
@@ -14,6 +13,7 @@ from flask import (
         session, 
         url_for, 
 )
+from passlib.hash import sha256_crypt
 import pytz
 from werkzeug.utils import secure_filename
 
@@ -33,8 +33,17 @@ def check_auth(username, password):
     """This function is called to check if a username /
     password combination is valid.
     """
-    if app.config['TESTING'] == True and username == 'admin' and password == 'tunch':
+    if app.config['TESTING'] and (username, password) == ('admin', 'tunch'):
         return True
+    elif not app.config['TESTING']:
+        cred = (app.config['ADMIN_USER'], app.config['ADMIN_PASSWORD_HASH'])
+        if username == cred[0] and sha256_crypt.verify(password, cred[1]):
+            return True
+    app.logger.warning(
+            "invalid credentials %s, %s attempted" % (username, password)
+    )
+    return False
+    '''
     u = User.query.filter_by(username=username).first()
     if u and u.verify_password(password):
         session['current_user'] = {'username': u.username, 'id': u.id}
@@ -42,6 +51,7 @@ def check_auth(username, password):
     else:
         session['current_user'] = None
         return False
+    '''
 
 def authenticate():
     """Sends a 401 response that enables basic auth"""
@@ -74,9 +84,13 @@ def ip_throttled(submission_type, addr, max_submissions=app.config['MAX_SUBMISSI
             submission_type.datetime_submitted >= one_hour_ago
     ).all()
     if len(recent_by_ip) > max_submissions:
-        logging.info("throttled submission by %s" % addr)
+        app.logger.info("throttled submission by %s" % addr)
         return True
     return False
+
+def log_generic_except():
+    app.logger.error(sys.exc_info()[0])
+
 
 ## View functions
 @app.route('/', methods=['GET'])
@@ -94,6 +108,7 @@ def submit_on_the_road():
         flash("Something went wrong. Make sure that all of your pictures "
                 "are smaller than %sMB." % app.config['MAX_CONTENT_MB']
         )
+        log_generic_except()
         return redirect(url_for('submit_on_the_road'))
     slice_index = len(pictures_to_parse) if pictures_to_parse else 1
     if request.method == 'POST' and not pictures_to_parse:
@@ -118,7 +133,7 @@ def submit_on_the_road():
         submission_prefix = str(uuid.uuid1())
         for i, picture_form in enumerate(pictures_to_parse):
             if not picture_form.validate(request):
-                for error in picture_form.errors: print error
+                for error in picture_form.errors: app.logger.error(error)
                 return render_template('submit_on_the_road.html', 
                         form=form, config=app.config, slice_index=slice_index)
             picture_file = picture_form.upload.data
@@ -133,6 +148,8 @@ def submit_on_the_road():
             try:
                 picture_file.save(file_path)
             except:
+                app.logger.error("Picture upload error")
+                log_generic_except()
                 flash("Something went wrong uploading picture #%s, %s" % (
                         str(i+1), form.title.data)
                 )
@@ -148,7 +165,7 @@ def submit_on_the_road():
         db.session.commit()
         return redirect(url_for('thanks_on_the_road'))
     if form.errors:
-        print form.errors
+        app.logger.error(form.errors)
     return render_template(
             'submit_on_the_road.html', form=form, config=app.config, 
             slice_index=slice_index
@@ -171,6 +188,7 @@ def admin_list_on_the_road():
             flash("Something went wrong with the posting. Check to see "
                     "if the pictures have uploaded, and delete them if so..."
             )
+            log_generic_except()
             return redirect(url_for('admin_list_on_the_road'))
         flash("Alright, there should be a new draft post up at BJ!")
     pending_submissions = (Submission.query.filter_by(status='pending')
@@ -199,6 +217,7 @@ def admin_delete_on_the_road():
             try:
                 os.remove(picture.file_location)
             except:
+                log_generic_except()
                 errs += str(sys.exc_info()[0])
                 errs += "....."
         db.session.delete(submission)
@@ -234,7 +253,7 @@ def submit_quote():
                 datetime_submitted=datetime.datetime.now(pytz.timezone('US/Eastern')),
                 ip_address=request.remote_addr
         )
-        logging.info("added new quote '%s' from %s" % (
+        app.logger.info("added new quote '%s' from %s" % (
                 form.quote.data, form.nym.data
         ))
         db.session.add(new_quote)
@@ -243,7 +262,7 @@ def submit_quote():
         return redirect(url_for('submit_quote'))
     if form.errors:
         errs = ';'.join(str(err) for err in form.errors)
-        logging.debug(errs)
+        app.logger.debug(errs)
     return render_template('submit_quote.html', form=form, config=app.config)
 
 

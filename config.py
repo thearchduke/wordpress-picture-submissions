@@ -9,6 +9,8 @@ import os
 import socket
 
 
+ADMIN_USER = 'admin'
+ADMIN_PASSWORD_HASH = '$5$rounds=535000$3ddsBs5kiD79ZJfy$ybeUpee2j5YxsB0DjS4pznu2RFP3Q4Fa.V9i.xiLwtC'
 APPLICATION_WORKING_DIRECTORY = os.getcwd()
 HTML_SAFE = False
 LOCAL = socket.gethostname() != 'test.balloon-juice.com'
