@@ -25,6 +25,7 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///submissions.db'
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 TESTING = False
 UPLOADED_IMAGES_DEST = './'
+WTF_CSRF_TIME_LIMIT = 86400
 
 CELERY_RESULT_BACKEND = 'amqp://guest@localhost//'
 CELERY_BROKER_URL = 'amqp://guest@localhost//'

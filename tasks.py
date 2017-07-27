@@ -64,17 +64,16 @@ class BJPostWriter(object):
 
     def submit_post(self):
         r = self.wp.post('/wp/v2/posts', params={
-                'title': 'On the Road', 
+                'title': 'On the Road and In Your Backyard', 
                 'status': 'draft',
                 'content': self.post_text,
-                #'categories': ['On The Road']
-                #TODO FIXME wordpress categories are listed by ID here
+                'categories': [1702, 82, 240, 78]
         })
         if r.status_code != 201:
             err = "Failed to write post for Submission %s, reason: %s" % (
                     self.submission.id, r.text
             )
-            logging.error(err)
+            app.logger.error(err)
             raise IOError(err)
         return r.json()
 
