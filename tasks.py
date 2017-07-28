@@ -1,5 +1,3 @@
-import logging
-
 from celery import Celery
 import jinja2
 
@@ -43,13 +41,13 @@ class BJPostWriter(object):
     def upload_pictures(self):
         self.upload_results = []
         for picture in self.submission.pictures:
-            logging.info("uploading picture %s to wordpress" % picture.id)
+            app.logger.info("uploading picture %s to wordpress" % picture.id)
             r = self.wp.upload_file(picture.file_location)
             if r.status_code != 201:
                 err = "Upload failed for Picture %s, reason: %s" % (
                         picture.id, r.reason
                 )
-                logging.error(err)
+                app.logger.error(err)
                 raise IOError(err)
                 break
             self.upload_results.append((picture, r.json()))
@@ -63,11 +61,11 @@ class BJPostWriter(object):
         )
 
     def submit_post(self):
-        r = self.wp.post('/wp/v2/posts', params={
+        r = self.wp.post('/wp/v2/posts', data={
                 'title': 'On the Road and In Your Backyard', 
                 'status': 'draft',
                 'content': self.post_text,
-                'categories': [1702, 82, 240, 78]
+                #'categories': ['1702', '82', '240', '78']
         })
         if r.status_code != 201:
             err = "Failed to write post for Submission %s, reason: %s" % (
