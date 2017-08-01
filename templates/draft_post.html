@@ -2,7 +2,7 @@ Good Morning All,
 
 This weekday feature is for Juicers who are are on the road, traveling, or just want to share a little bit of their world via stories and pictures. So many of us rise each morning, eager for something beautiful, inspiring, amazing, subtle, of note, and our community delivers - a view into their world, whether they're far away or close to home - pictures with a story, with context, with meaning, sometimes just beauty. By concentrating travel updates and tips here, it's easier for all of us to keep up or find them later.
 
-So please, speak up and share some of your adventures and travel news here, and submit your pictures using our speedy, secure form. &lt;- make a link, etc. -&gt; You can submit up to 7 pictures at a time, with an overall description and one for each picture.
+So please, speak up and share some of your adventures and travel news here, and submit your pictures using <a href="https://test.balloon-juice.com/ontheroad">our speedy, secure form</a>. You can submit up to 7 pictures at a time, with an overall description and one for each picture.
 
 You can, of course, <a href="mailto:picstopost@balloon-juice.com?subject=Picture to Post on Balloon Juice&amp;body=Where it was taken: When: Commenter screenname: Other notes or info about the picture:">send an email</a> with pictures if the form gives you trouble, or if you are trying to submit something special, like a zipped archive or a movie. If your pictures are already hosted online, then please email the links with your descriptions.
 
@@ -18,6 +18,10 @@ Today, pictures from valued commenter {{ submission.nym }}.
 
 {% for picture, result in upload_results %}
 <blockquote>{% if loop.index == 1 %}{{ submission.introduction }}{% endif %}
+
+    {% if picture.title %}
+        {{ picture.title }}
+    {% endif %}
 
     {% if picture.date_taken %}
         Taken on {{ picture.date_taken }}
@@ -46,4 +50,4 @@ Travel safely everybody, and do share some stories in the comments, even if you'
 
 &nbsp;
 
-One again, to submit pictures: Use the Form &lt;- make a link, etc. -&gt; or  <a href="mailto:picstopost@balloon-juice.com?subject=Picture to Post on Balloon Juice&amp;body=Where it was taken: When: Commenter screenname: Other notes or info about the picture:">Send an Email</a>
+One again, to submit pictures: <a href="https://test.balloon-juice.com/ontheroad">Use the Form</a> or <a href="mailto:picstopost@balloon-juice.com?subject=Picture to Post on Balloon Juice&amp;body=Where it was taken: When: Commenter screenname: Other notes or info about the picture:">Send an Email</a>
