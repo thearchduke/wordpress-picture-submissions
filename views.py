@@ -190,6 +190,9 @@ def admin_list_on_the_road():
             )
             log_generic_except()
             return redirect(url_for('admin_list_on_the_road'))
+        submission.status = 'submitted'
+        db.session.add(submission)
+        db.session.commit()
         flash("Alright, there should be a new draft post up at BJ!")
     pending_submissions = (Submission.query.filter_by(status='pending')
             .order_by(Submission.datetime_submitted.desc()).all()
@@ -198,13 +201,14 @@ def admin_list_on_the_road():
             'admin_list_on_the_road.html', form=form,
             pending_submissions=pending_submissions)
 
-@app.route('/on-the-road/admin/submitted/', methods=['GET', 'POST'])
+@app.route('/on-the-road/admin/status/<status>/', methods=['GET', 'POST'])
 @requires_auth
-def admin_list_submitted_on_the_road():
-    submissions = (Submission.query.filter_by(status='submitted')
+def admin_list_status_filter_on_the_road(status):
+    submissions = (Submission.query.filter_by(status=status)
             .order_by(Submission.datetime_submitted.desc()).all()
     )
-    return render_template('admin_list_submitted_on_the_road.html', submissions=submissions)
+    return render_template('admin_list_filtered_on_the_road.html', 
+            filter=status, submissions=submissions)
 
 @app.route('/on-the-road/admin/delete/', methods=['POST'])
 @requires_auth

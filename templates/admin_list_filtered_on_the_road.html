@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}On The Road | Admin{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block jumbotron %}
+<h1>On The Road | Admin</h1>
+<p>A list of submissions filtered for status <code>{{ filter }}</code>.</p>
+{% endblock %}
+
+{% block content %}
+    {% for submission in submissions %}
+    <div class="card">
+        <div class="card-block">
+            <h4 class="card-title">{{ submission.nym }} on {{ submission.datetime_submitted }}</h4>
+            <h6 class="card-subtitle">(<a href="mailto:{{ submission.email }}">email commenter</a>)</h6>
+            <p class="card-text">{{ submission.introduction }}</p>
+            <ul class="list-group list-group-flush">
+            {% for picture in submission.pictures %}
+                <li class="list-group-item">
+                    <p>{{ picture.picture_description }}<img style="width: 40%;" src="{{ url_for('static', filename=picture.img_src) }}"/></p>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

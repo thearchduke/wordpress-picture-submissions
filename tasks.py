@@ -81,7 +81,4 @@ class BJPostWriter(object):
             self.write_post()
         except:
             return False
-        self.submission.status = 'submitted'
-        db.session.add(self.submission)
-        db.session.commit()
         return self.submit_post()
