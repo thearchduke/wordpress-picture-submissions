@@ -175,6 +175,11 @@ def submit_on_the_road():
 def thanks_on_the_road():
     return render_template('thanks_on_the_road.html')
 
+@app.route('/admin/index', methods=['GET'])
+@requires_auth
+def admin_index():
+    return render_template('admin_index.html')
+
 @app.route('/on-the-road/admin/', methods=['GET', 'POST'])
 @requires_auth
 def admin_list_on_the_road():
@@ -207,8 +212,32 @@ def admin_list_status_filter_on_the_road(status):
     submissions = (Submission.query.filter_by(status=status)
             .order_by(Submission.datetime_submitted.desc()).all()
     )
+    form = OTRSubmissionAdminForm()
     return render_template('admin_list_filtered_on_the_road.html', 
-            filter=status, submissions=submissions)
+            filter=status, submissions=submissions, form=form)
+
+@app.route('/on-the-road/admin/delete-submitted/', methods=['POST'])
+@requires_auth
+def admin_delete_submitted_on_the_road():
+    form = OTRSubmissionAdminForm()
+    if form.validate_on_submit():
+        submission = Submission.query.get(form.submission_id.data)
+        errs = ""
+        for picture in submission.pictures:
+            try:
+                os.remove(picture.file_location)
+            except:
+                log_generic_except()
+                errs += str(sys.exc_info()[0])
+                errs += "....."
+        db.session.delete(submission)
+        db.session.commit()
+        flash("OK, that's been deleted.")
+        if errs != "":
+            flash("With the following errors: %s" % errs)
+    else:
+        flash("Something went wrong deleting that submission.")
+    return redirect(url_for('admin_list_status_filter_on_the_road', status='submitted'))
 
 @app.route('/on-the-road/admin/delete/', methods=['POST'])
 @requires_auth

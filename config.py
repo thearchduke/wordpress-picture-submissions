@@ -41,7 +41,7 @@ WORDPRESS = {
         'production': {
                 'base_url': 'https://www.balloon-juice.com/index.php/wp-json',
                 'client_key': '4YfoPTVmuRUv',
-                'client_secret': 'TGbFXOX4ctWeTWZ3fURGzZDLByCGYPlso5ndf531E5KJ9uoW',
+                'client_secret': 'SJCMxlc0EkEDd6NhZfXu5BOjssKo1aTlgwRRczBRwnLUZufi',
                 'resource_owner_key': u'Jmv0lNXcXYZTEmQ8OdkYPQMS',
                 'resource_owner_secret': u'9jFXvKDVDJUWFMBUfu04gjgDpYEUvNBdwj60GicPc631kCWR'
         }

@@ -20,10 +20,17 @@
             <ul class="list-group list-group-flush">
             {% for picture in submission.pictures %}
                 <li class="list-group-item">
-                    <p>{{ picture.picture_description }}<img style="width: 40%;" src="{{ url_for('static', filename=picture.img_src) }}"/></p>
+                    <p>{{ picture.picture_description }}<img style="width: 20%;" src="{{ url_for('static', filename=picture.img_src) }}"/></p>
                 </li>
             {% endfor %}
             </ul>
+        </div>
+        <div class="card-block">
+            <form method="POST" action="{{ url_for('admin_delete_submitted_on_the_road') }}">
+                {{ form.csrf_token }}
+                {{ form.submission_id(value=submission.id) }}
+                <input type="submit" value="Delete submission" class="btn btn-sm btn-warning" onclick="return confirm('Do you really want to delete this?');return false;">
+            </form>
         </div>
     </div>
     {% endfor %}

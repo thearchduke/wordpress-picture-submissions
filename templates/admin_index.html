@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}On The Road | Admin | Index{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block jumbotron %}
+<h1>On The Road | Admin | Index</h1>
+<p>Your handy list of links</p>
+{% endblock %}
+
+{% block content %}
+    <h3>On The Road</h3>
+    <ul>
+        <li><a href="{{ url_for('submit_on_the_road') }}">Submit pictures</a></li>
+        <li><a href="{{ url_for('admin_list_on_the_road') }}">List of pending submissions</a></li>
+        <li><a href="{{ url_for('admin_list_status_filter_on_the_road', status='submitted') }}">Submissions 'successfully' submitted to Wordpress</a></li>
+    </ul>
+
+    <h3>Quotes</h3>
+    <ul>
+        <li><a href="{{ url_for('submit_quote') }}">Submit a quote</a></li>
+        <li><a href="{{ url_for('admin_list_quote', status='submitted') }}">List of submitted quotes</a></li>
+    </ul>    
+{% endblock %}

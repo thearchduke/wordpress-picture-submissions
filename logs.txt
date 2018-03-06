@@ -1,0 +1,670 @@
+-- Logs begin at Fri 2017-12-08 10:12:00 UTC, end at Mon 2017-12-11 14:47:27 UTC. --
+Dec 08 10:12:00 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:12:00 +0000] [22513] [DEBUG] Invalid request from ip=54.159.191.160: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:12:00 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:12:00 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 08 10:12:02 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:12:02 +0000] [31954] [DEBUG] GET /
+Dec 08 10:12:45 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:12:45 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 08 10:12:45 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:12:45 +0000] [7172] [DEBUG] Invalid request from ip=54.197.83.215: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:12:45 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:12:45 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 08 10:12:47 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:12:47 +0000] [22513] [DEBUG] GET /
+Dec 08 10:14:08 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:14:08 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 08 10:14:08 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:14:08 +0000] [31954] [DEBUG] Invalid request from ip=54.205.23.59: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:14:08 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:14:08 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 08 10:14:09 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:14:09 +0000] [22513] [DEBUG] GET /
+Dec 08 10:14:27 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:14:27 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 08 10:14:27 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:14:27 +0000] [22513] [DEBUG] Invalid request from ip=54.211.124.60: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:14:27 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:14:27 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 08 10:14:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:14:29 +0000] [22513] [DEBUG] GET /
+Dec 08 10:15:36 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:15:36 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 08 10:15:36 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:15:36 +0000] [7172] [DEBUG] Invalid request from ip=54.158.129.160: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:15:36 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:15:36 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 08 10:15:38 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:15:38 +0000] [20314] [DEBUG] GET /
+Dec 08 10:16:02 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:16:02 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 08 10:16:02 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:16:02 +0000] [22513] [DEBUG] Invalid request from ip=54.145.247.5: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:16:02 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:16:02 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 08 10:16:03 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:16:03 +0000] [7172] [DEBUG] GET /
+Dec 08 10:16:26 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:16:26 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 08 10:16:26 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:16:26 +0000] [22513] [DEBUG] Invalid request from ip=54.159.191.160: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:16:26 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:16:26 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 08 10:16:28 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:16:28 +0000] [31954] [DEBUG] GET /
+Dec 08 10:16:30 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:16:30 +0000] [20314] [DEBUG] GET /on-the-road/submit
+Dec 08 10:17:32 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:17:32 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 08 10:17:32 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:17:32 +0000] [20314] [DEBUG] Invalid request from ip=54.156.131.159: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:17:32 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:17:32 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 08 10:17:35 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:17:35 +0000] [31954] [DEBUG] GET /
+Dec 08 10:18:48 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:18:48 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 08 10:18:48 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:18:48 +0000] [31954] [DEBUG] Invalid request from ip=54.161.159.182: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:18:48 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:18:48 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 08 10:18:51 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:18:51 +0000] [7172] [DEBUG] GET /
+Dec 08 10:19:26 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:19:26 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 08 10:19:26 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:19:26 +0000] [31954] [DEBUG] Invalid request from ip=54.159.233.151: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:19:26 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:19:26 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 08 10:19:28 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:19:28 +0000] [20314] [DEBUG] GET /
+Dec 08 10:19:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:19:29 +0000] [31954] [DEBUG] GET /on-the-road/submit
+Dec 08 10:22:56 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:22:56 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 08 10:22:56 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:22:56 +0000] [7172] [DEBUG] Invalid request from ip=54.166.123.150: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:22:56 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:22:56 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 08 10:22:58 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:22:58 +0000] [7208] [DEBUG] GET /
+Dec 08 10:23:04 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:23:04 +0000] [20314] [DEBUG] GET /on-the-road/submit
+Dec 08 10:25:37 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:25:37 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 08 10:25:37 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:25:37 +0000] [31954] [DEBUG] Invalid request from ip=54.156.151.63: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:25:37 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:25:37 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 08 10:25:42 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:25:42 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 08 10:25:42 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:25:42 +0000] [20314] [DEBUG] Invalid request from ip=54.156.151.63: [SSL: SSL_HANDSHAKE_FAILURE] ssl handshake failure (_ssl.c:1754)
+Dec 08 10:25:42 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:25:42 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 08 10:28:52 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:28:52 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 08 10:28:52 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:28:52 +0000] [20314] [DEBUG] Invalid request from ip=54.159.223.142: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:28:52 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:28:52 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 08 10:28:55 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:28:55 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 08 10:28:55 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:28:55 +0000] [31954] [DEBUG] Invalid request from ip=54.204.202.116: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:28:55 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:28:55 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 08 10:28:57 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:28:57 +0000] [7208] [DEBUG] GET /
+Dec 08 10:31:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:31:29 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 08 10:31:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:31:29 +0000] [22513] [DEBUG] Invalid request from ip=54.204.186.194: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:31:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:31:29 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 08 10:31:31 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:31:31 +0000] [7208] [DEBUG] GET /
+Dec 08 10:31:34 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:31:34 +0000] [22513] [DEBUG] GET /on-the-road/submit
+Dec 08 10:31:40 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:31:40 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 10:31:40 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:31:40 +0000] [7208] [DEBUG] Invalid request from ip=54.197.145.89: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:31:40 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:31:40 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 10:31:43 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:31:43 +0000] [20314] [DEBUG] GET /
+Dec 08 10:32:03 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:32:03 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 10:32:03 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:32:03 +0000] [7208] [DEBUG] Invalid request from ip=54.167.178.94: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:32:03 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:32:03 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 10:32:05 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:32:05 +0000] [22513] [DEBUG] GET /
+Dec 08 10:33:25 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:33:25 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 08 10:33:25 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:33:25 +0000] [20314] [DEBUG] Invalid request from ip=54.197.82.135: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:33:25 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:33:25 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 08 10:33:27 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:33:27 +0000] [22513] [DEBUG] GET /
+Dec 08 10:33:32 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:33:32 +0000] [7172] [DEBUG] GET /on-the-road/submit
+Dec 08 10:34:54 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:34:54 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 10:34:54 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:34:54 +0000] [7208] [DEBUG] Invalid request from ip=54.204.79.219: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:34:54 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:34:54 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 10:34:57 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:34:57 +0000] [7172] [DEBUG] GET /
+Dec 08 10:34:59 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:34:59 +0000] [20314] [DEBUG] GET /on-the-road/submit
+Dec 08 10:35:01 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:35:01 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 08 10:35:01 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:35:01 +0000] [22513] [DEBUG] Invalid request from ip=54.145.247.5: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:35:01 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:35:01 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 08 10:35:04 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:35:04 +0000] [31954] [DEBUG] GET /
+Dec 08 10:36:16 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:36:16 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 08 10:36:16 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:36:16 +0000] [31954] [DEBUG] Invalid request from ip=54.211.124.60: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:36:16 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:36:16 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 08 10:36:18 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:36:18 +0000] [7208] [DEBUG] GET /
+Dec 08 10:36:38 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:36:38 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 08 10:36:38 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:36:38 +0000] [31954] [DEBUG] Invalid request from ip=54.167.178.94: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:36:38 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:36:38 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 08 10:36:42 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:36:42 +0000] [20314] [DEBUG] GET /
+Dec 08 10:38:26 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:38:26 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 10:38:26 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:38:26 +0000] [7208] [DEBUG] Invalid request from ip=54.159.140.173: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:38:26 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:38:26 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 10:38:28 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:38:28 +0000] [20314] [DEBUG] GET /
+Dec 08 10:41:18 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:41:18 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 08 10:41:18 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:41:18 +0000] [31954] [DEBUG] Invalid request from ip=54.156.131.159: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:41:18 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:41:18 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 08 10:41:21 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:41:21 +0000] [22513] [DEBUG] GET /
+Dec 08 10:41:52 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:41:52 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 08 10:41:52 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:41:52 +0000] [31954] [DEBUG] Invalid request from ip=54.146.158.131: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:41:52 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:41:52 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 08 10:41:55 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:41:55 +0000] [20314] [DEBUG] GET /
+Dec 08 10:42:28 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:42:28 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 10:42:28 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:42:28 +0000] [7208] [DEBUG] Invalid request from ip=54.156.151.63: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:42:28 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:42:28 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 10:42:31 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:42:31 +0000] [7172] [DEBUG] GET /
+Dec 08 10:42:50 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:42:50 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 10:42:50 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:42:50 +0000] [7208] [DEBUG] Invalid request from ip=50.16.119.53: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:42:50 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:42:50 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 10:42:51 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:42:51 +0000] [20314] [DEBUG] GET /
+Dec 08 10:46:00 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:46:00 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 08 10:46:00 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:46:00 +0000] [31954] [DEBUG] Invalid request from ip=54.211.65.103: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:46:00 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:46:00 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 08 10:46:03 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:46:03 +0000] [20314] [DEBUG] GET /
+Dec 08 10:46:16 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:46:16 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 08 10:46:16 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:46:16 +0000] [7172] [DEBUG] Invalid request from ip=54.157.209.110: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:46:16 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:46:16 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 08 10:46:18 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:46:18 +0000] [31954] [DEBUG] GET /
+Dec 08 10:47:20 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:47:20 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 08 10:47:20 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:47:20 +0000] [7172] [DEBUG] Invalid request from ip=54.197.83.215: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:47:20 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:47:20 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 08 10:47:21 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:47:21 +0000] [22513] [DEBUG] GET /
+Dec 08 10:47:39 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:47:39 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 10:47:39 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:47:39 +0000] [7208] [DEBUG] Invalid request from ip=54.161.206.7: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:47:39 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:47:39 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 10:47:41 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:47:41 +0000] [31954] [DEBUG] GET /
+Dec 08 10:47:43 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:47:43 +0000] [7208] [DEBUG] GET /on-the-road/submit
+Dec 08 10:48:28 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:48:28 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 08 10:48:28 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:48:28 +0000] [22513] [DEBUG] Invalid request from ip=54.197.145.89: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:48:28 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:48:28 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 08 10:48:30 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:48:30 +0000] [7172] [DEBUG] GET /
+Dec 08 10:48:34 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:48:34 +0000] [22513] [DEBUG] GET /on-the-road/submit
+Dec 08 10:49:44 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:49:44 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 08 10:49:44 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:49:44 +0000] [31954] [DEBUG] Invalid request from ip=54.167.178.94: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:49:44 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:49:44 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 08 10:49:45 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:49:45 +0000] [22513] [DEBUG] GET /
+Dec 08 10:49:46 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:49:46 +0000] [31954] [DEBUG] GET /on-the-road/submit
+Dec 08 10:49:53 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:49:53 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 08 10:49:53 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:49:53 +0000] [22513] [DEBUG] Invalid request from ip=54.161.206.7: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:49:53 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:49:53 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 08 10:49:54 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:49:54 +0000] [7172] [DEBUG] GET /
+Dec 08 10:49:57 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:49:57 +0000] [22513] [DEBUG] GET /on-the-road/submit
+Dec 08 10:50:19 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:50:19 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 08 10:50:19 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:50:19 +0000] [7172] [DEBUG] Invalid request from ip=54.197.113.116: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:50:19 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:50:19 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 08 10:50:19 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:50:19 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 08 10:50:19 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:50:19 +0000] [20314] [DEBUG] Invalid request from ip=54.167.134.7: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:50:19 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:50:19 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 08 10:50:20 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:50:20 +0000] [31954] [DEBUG] GET /
+Dec 08 10:50:20 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:50:20 +0000] [7208] [DEBUG] GET /
+Dec 08 10:51:07 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:51:07 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 08 10:51:07 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:51:07 +0000] [22513] [DEBUG] Invalid request from ip=54.156.151.63: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:51:07 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:51:07 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 08 10:51:08 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:51:08 +0000] [7208] [DEBUG] GET /
+Dec 08 10:52:23 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:52:23 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 10:52:23 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:52:23 +0000] [7208] [DEBUG] Invalid request from ip=54.204.186.194: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:52:23 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:52:23 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 10:52:25 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:52:25 +0000] [31954] [DEBUG] GET /
+Dec 08 10:53:02 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:53:02 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 10:53:02 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:53:02 +0000] [7208] [DEBUG] Invalid request from ip=54.159.140.173: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:53:02 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:53:02 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 10:53:04 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:53:04 +0000] [7208] [DEBUG] GET /
+Dec 08 10:53:05 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:53:05 +0000] [7208] [DEBUG] GET /on-the-road/submit
+Dec 08 10:53:23 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:53:23 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 10:53:23 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:53:23 +0000] [7208] [DEBUG] Invalid request from ip=54.197.145.89: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:53:23 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:53:23 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 10:53:25 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:53:25 +0000] [7208] [DEBUG] GET /
+Dec 08 10:53:27 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:53:27 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 08 10:53:27 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:53:27 +0000] [7172] [DEBUG] Invalid request from ip=54.163.74.249: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:53:27 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:53:27 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 08 10:53:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:53:29 +0000] [20314] [DEBUG] GET /
+Dec 08 10:54:01 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:54:01 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 08 10:54:01 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:54:01 +0000] [7172] [DEBUG] Invalid request from ip=54.211.65.103: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:54:01 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:54:01 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 08 10:54:03 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:54:03 +0000] [7208] [DEBUG] GET /
+Dec 08 10:54:23 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:54:23 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 10:54:23 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:54:23 +0000] [7208] [DEBUG] Invalid request from ip=54.159.223.142: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:54:23 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:54:23 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 10:54:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:54:29 +0000] [7208] [DEBUG] GET /
+Dec 08 10:54:31 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:54:31 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 08 10:54:31 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:54:31 +0000] [31954] [DEBUG] Invalid request from ip=54.197.117.180: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:54:31 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:54:31 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 08 10:54:33 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:54:33 +0000] [20314] [DEBUG] GET /
+Dec 08 10:55:25 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:55:25 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 08 10:55:25 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:55:25 +0000] [31954] [DEBUG] Invalid request from ip=54.158.129.160: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:55:25 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:55:25 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 08 10:55:33 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:55:33 +0000] [31954] [DEBUG] GET /
+Dec 08 10:57:02 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:57:02 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 08 10:57:02 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:57:02 +0000] [31954] [DEBUG] Invalid request from ip=54.211.65.103: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:57:02 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:57:02 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 08 10:57:05 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:57:05 +0000] [22513] [DEBUG] GET /
+Dec 08 10:57:31 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:57:31 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 10:57:31 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:57:31 +0000] [7208] [DEBUG] Invalid request from ip=54.204.202.116: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:57:31 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:57:31 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 10:57:33 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:57:33 +0000] [7208] [DEBUG] GET /
+Dec 08 10:58:20 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:58:20 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 10:58:20 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:58:20 +0000] [7208] [DEBUG] Invalid request from ip=54.157.209.110: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:58:20 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:58:20 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 10:58:21 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:58:21 +0000] [7208] [DEBUG] GET /
+Dec 08 10:58:22 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:58:22 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 08 10:58:22 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:58:22 +0000] [31954] [DEBUG] Invalid request from ip=54.161.159.182: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:58:22 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:58:22 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 08 10:58:23 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:58:23 +0000] [7208] [DEBUG] GET /on-the-road/submit
+Dec 08 10:58:24 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:58:24 +0000] [20314] [DEBUG] GET /
+Dec 08 10:58:27 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:58:27 +0000] [7208] [DEBUG] GET /on-the-road/submit
+Dec 08 10:58:44 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:58:44 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 08 10:58:44 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:58:44 +0000] [31954] [DEBUG] Invalid request from ip=54.197.145.89: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 10:58:44 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:58:44 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 08 10:58:46 test.balloon-juice.com gunicorn[23895]: [2017-12-08 10:58:46 +0000] [7208] [DEBUG] GET /
+Dec 08 11:00:41 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:00:41 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 11:00:41 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:00:41 +0000] [7208] [DEBUG] Invalid request from ip=54.166.123.150: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 11:00:41 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:00:41 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 11:00:42 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:00:42 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 08 11:00:42 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:00:42 +0000] [7172] [DEBUG] Invalid request from ip=54.159.233.151: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 11:00:42 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:00:42 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 08 11:00:42 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:00:42 +0000] [7208] [DEBUG] GET /
+Dec 08 11:00:43 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:00:43 +0000] [7208] [DEBUG] GET /
+Dec 08 11:02:34 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:02:34 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 11:02:34 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:02:34 +0000] [7208] [DEBUG] Invalid request from ip=54.159.140.173: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 11:02:34 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:02:34 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 11:02:35 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:02:35 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 08 11:02:35 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:02:35 +0000] [22513] [DEBUG] Invalid request from ip=54.197.82.135: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 11:02:35 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:02:35 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 08 11:02:36 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:02:36 +0000] [7208] [DEBUG] GET /
+Dec 08 11:02:38 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:02:38 +0000] [31954] [DEBUG] GET /on-the-road/submit
+Dec 08 11:02:39 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:02:39 +0000] [7208] [DEBUG] GET /
+Dec 08 11:03:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:03:29 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 11:03:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:03:29 +0000] [7208] [DEBUG] Invalid request from ip=54.167.146.235: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 11:03:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:03:29 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 11:03:30 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:03:30 +0000] [22513] [DEBUG] GET /
+Dec 08 11:04:54 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:04:54 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 08 11:04:54 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:04:54 +0000] [20314] [DEBUG] Invalid request from ip=54.158.129.160: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 11:04:54 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:04:54 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 08 11:04:58 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:04:58 +0000] [20314] [DEBUG] GET /
+Dec 08 11:05:28 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:05:28 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 08 11:05:28 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:05:28 +0000] [20314] [DEBUG] Invalid request from ip=54.204.186.194: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 11:05:28 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:05:28 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 08 11:05:30 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:05:30 +0000] [20314] [DEBUG] GET /
+Dec 08 11:06:13 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:06:13 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 11:06:13 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:06:13 +0000] [7208] [DEBUG] Invalid request from ip=54.167.178.94: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 11:06:13 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:06:13 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 11:06:15 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:06:15 +0000] [20314] [DEBUG] GET /
+Dec 08 11:06:18 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:06:18 +0000] [31954] [DEBUG] GET /on-the-road/submit
+Dec 08 11:06:37 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:06:37 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 11:06:37 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:06:37 +0000] [7208] [DEBUG] Invalid request from ip=54.166.123.150: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 11:06:37 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:06:37 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 11:06:38 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:06:38 +0000] [7172] [DEBUG] GET /
+Dec 08 11:07:48 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:07:48 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 11:07:48 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:07:48 +0000] [7208] [DEBUG] Invalid request from ip=54.159.233.151: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 11:07:48 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:07:48 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 11:07:51 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:07:51 +0000] [7172] [DEBUG] GET /
+Dec 08 11:08:47 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:08:47 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 11:08:47 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:08:47 +0000] [7208] [DEBUG] Invalid request from ip=54.197.82.135: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 11:08:47 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:08:47 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 11:08:48 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:08:48 +0000] [20314] [DEBUG] GET /
+Dec 08 11:08:50 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:08:50 +0000] [31954] [DEBUG] GET /on-the-road/submit
+Dec 08 11:47:53 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:47:53 +0000] [7208] [DEBUG] GET /
+Dec 08 11:47:54 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:47:54 +0000] [7208] [DEBUG] GET /on-the-road/submit
+Dec 08 11:47:55 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:47:55 +0000] [7208] [DEBUG] GET /favicon.ico
+Dec 08 11:50:47 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:50:47 +0000] [31954] [DEBUG] GET /robots.txt
+Dec 08 11:50:48 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:50:48 +0000] [7208] [DEBUG] GET /
+Dec 08 11:50:50 test.balloon-juice.com gunicorn[23895]: [2017-12-08 11:50:50 +0000] [7208] [DEBUG] GET /on-the-road/submit
+Dec 08 12:07:07 test.balloon-juice.com gunicorn[23895]: [2017-12-08 12:07:07 +0000] [7208] [DEBUG] GET /
+Dec 08 12:07:07 test.balloon-juice.com gunicorn[23895]: [2017-12-08 12:07:07 +0000] [7208] [DEBUG] GET /on-the-road/submit
+Dec 08 12:37:45 test.balloon-juice.com gunicorn[23895]: [2017-12-08 12:37:45 +0000] [20314] [DEBUG] GET /
+Dec 08 12:37:46 test.balloon-juice.com gunicorn[23895]: [2017-12-08 12:37:46 +0000] [7208] [DEBUG] GET /on-the-road/submit
+Dec 08 12:45:45 test.balloon-juice.com gunicorn[23895]: [2017-12-08 12:45:45 +0000] [7172] [DEBUG] GET /
+Dec 08 12:45:45 test.balloon-juice.com gunicorn[23895]: [2017-12-08 12:45:45 +0000] [22513] [DEBUG] GET /on-the-road/submit
+Dec 08 12:45:47 test.balloon-juice.com gunicorn[23895]: [2017-12-08 12:45:47 +0000] [7172] [DEBUG] GET /favicon.ico
+Dec 08 12:55:48 test.balloon-juice.com gunicorn[23895]: [2017-12-08 12:55:48 +0000] [31954] [DEBUG] POST /on-the-road/submit
+Dec 08 12:56:40 test.balloon-juice.com gunicorn[23895]: [2017-12-08 12:56:40,981] ERROR in views: {'email': ["Something went wrong verifying this email and username combination. If you haven't commented at Balloon-Juice before, go comment in an active thread, wait for it to get approved, and come submit your pictures again. Alternatively, email your pictures to please@getmechamot.com"]}
+Dec 08 12:56:40 test.balloon-juice.com gunicorn[23895]: {'email': ["Something went wrong verifying this email and username combination. If you haven't commented at Balloon-Juice before, go comment in an active thread, wait for it to get approved, and come submit your pictures again. Alternatively, email your pictures to please@getmechamot.com"]}
+Dec 08 14:34:11 test.balloon-juice.com gunicorn[23895]: [2017-12-08 14:34:11 +0000] [7172] [DEBUG] GET /
+Dec 08 16:05:46 test.balloon-juice.com gunicorn[23895]: [2017-12-08 16:05:46 +0000] [20314] [DEBUG] GET /robots.txt
+Dec 08 16:05:48 test.balloon-juice.com gunicorn[23895]: [2017-12-08 16:05:48 +0000] [7208] [DEBUG] GET /
+Dec 08 16:05:49 test.balloon-juice.com gunicorn[23895]: [2017-12-08 16:05:49 +0000] [31954] [DEBUG] GET /on-the-road/submit
+Dec 08 19:39:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 19:39:29 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 08 19:39:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 19:39:29 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 08 19:39:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 19:39:29 +0000] [7208] [DEBUG] Invalid request from ip=46.17.46.77: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 19:39:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 19:39:29 +0000] [22513] [DEBUG] Invalid request from ip=46.17.46.77: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 19:39:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 19:39:29 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 08 19:39:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 19:39:29 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 08 19:39:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 19:39:29 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 08 19:39:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 19:39:29 +0000] [22513] [DEBUG] Invalid request from ip=46.17.46.77: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 08 19:39:29 test.balloon-juice.com gunicorn[23895]: [2017-12-08 19:39:29 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 08 19:39:30 test.balloon-juice.com gunicorn[23895]: [2017-12-08 19:39:30 +0000] [20314] [DEBUG] GET /
+Dec 08 19:39:30 test.balloon-juice.com gunicorn[23895]: [2017-12-08 19:39:30 +0000] [7172] [DEBUG] GET /recordings/index.php
+Dec 08 19:39:30 test.balloon-juice.com gunicorn[23895]: [2017-12-08 19:39:30 +0000] [31954] [DEBUG] GET /a2billing/agent/Public/index.php
+Dec 08 20:41:36 test.balloon-juice.com gunicorn[23895]: [2017-12-08 20:41:36 +0000] [31954] [DEBUG] GET /
+Dec 08 20:55:04 test.balloon-juice.com gunicorn[23895]: [2017-12-08 20:55:04 +0000] [31954] [DEBUG] GET /
+Dec 08 21:08:13 test.balloon-juice.com gunicorn[23895]: [2017-12-08 21:08:13 +0000] [31954] [DEBUG] GET /
+Dec 08 21:08:14 test.balloon-juice.com gunicorn[23895]: [2017-12-08 21:08:14 +0000] [22513] [DEBUG] GET /on-the-road/submit
+Dec 08 21:08:17 test.balloon-juice.com gunicorn[23895]: [2017-12-08 21:08:17 +0000] [22513] [DEBUG] GET /favicon.ico
+Dec 08 21:15:00 test.balloon-juice.com gunicorn[23895]: [2017-12-08 21:15:00 +0000] [22513] [DEBUG] POST /on-the-road/submit
+Dec 08 21:15:04 test.balloon-juice.com gunicorn[23895]: [2017-12-08 21:15:04,649] ERROR in views: picture_description
+Dec 08 21:15:04 test.balloon-juice.com gunicorn[23895]: picture_description
+Dec 08 21:15:04 test.balloon-juice.com gunicorn[23895]: [2017-12-08 21:15:04,649] ERROR in views: date_taken
+Dec 08 21:15:04 test.balloon-juice.com gunicorn[23895]: date_taken
+Dec 08 21:18:49 test.balloon-juice.com gunicorn[23895]: [2017-12-08 21:18:49 +0000] [20314] [DEBUG] POST /on-the-road/submit
+Dec 08 21:18:54 test.balloon-juice.com gunicorn[23895]: [2017-12-08 21:18:54,277] ERROR in views: date_taken
+Dec 08 21:18:54 test.balloon-juice.com gunicorn[23895]: date_taken
+Dec 08 21:19:31 test.balloon-juice.com gunicorn[23895]: [2017-12-08 21:19:31 +0000] [31954] [DEBUG] POST /on-the-road/submit
+Dec 08 21:19:36 test.balloon-juice.com gunicorn[23895]: [2017-12-08 21:19:36,235] ERROR in views: date_taken
+Dec 08 21:19:36 test.balloon-juice.com gunicorn[23895]: date_taken
+Dec 09 00:40:18 test.balloon-juice.com gunicorn[23895]: [2017-12-09 00:40:18 +0000] [22513] [DEBUG] GET /a2billing/customer/templates/default/css/popup.css
+Dec 09 02:50:41 test.balloon-juice.com gunicorn[23895]: [2017-12-09 02:50:41 +0000] [22513] [DEBUG] Closing connection.
+Dec 09 09:33:24 test.balloon-juice.com gunicorn[23895]: [2017-12-09 09:33:24 +0000] [22513] [DEBUG] Ignored premature client disconnection. No more data after: 'GET / HTTP/1.1\nHost: test.balloon-juice.com\n\n'
+Dec 09 10:06:04 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:06:04 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 09 10:06:04 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:06:04 +0000] [20314] [DEBUG] Invalid request from ip=54.197.112.185: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:06:04 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:06:04 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 09 10:06:07 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:06:07 +0000] [22513] [DEBUG] Closing connection.
+Dec 09 10:07:50 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:07:50 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 09 10:07:50 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:07:50 +0000] [7208] [DEBUG] Invalid request from ip=54.163.114.139: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:07:50 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:07:50 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 09 10:07:51 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:07:51 +0000] [31954] [DEBUG] GET /
+Dec 09 10:09:39 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:09:39 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 09 10:09:39 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:09:39 +0000] [7172] [DEBUG] Invalid request from ip=54.205.152.242: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:09:39 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:09:39 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 09 10:09:39 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:09:39 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 09 10:09:39 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:09:39 +0000] [7208] [DEBUG] Invalid request from ip=54.159.140.214: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:09:39 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:09:39 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 09 10:09:40 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:09:40 +0000] [7172] [DEBUG] GET /
+Dec 09 10:09:41 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:09:41 +0000] [7208] [DEBUG] GET /
+Dec 09 10:09:43 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:09:43 +0000] [7208] [DEBUG] GET /on-the-road/submit
+Dec 09 10:10:08 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:10:08 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 09 10:10:08 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:10:08 +0000] [20314] [DEBUG] Invalid request from ip=54.204.245.160: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:10:08 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:10:08 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 09 10:10:11 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:10:11 +0000] [7208] [DEBUG] GET /
+Dec 09 10:12:19 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:12:19 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 09 10:12:19 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:12:19 +0000] [7208] [DEBUG] Invalid request from ip=54.161.196.148: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:12:19 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:12:19 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 09 10:12:20 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:12:20 +0000] [7208] [DEBUG] GET /
+Dec 09 10:13:03 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:13:03 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 09 10:13:03 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:13:03 +0000] [31954] [DEBUG] Invalid request from ip=54.205.242.134: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:13:03 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:13:03 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 09 10:13:06 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:13:06 +0000] [7208] [DEBUG] GET /
+Dec 09 10:14:51 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:14:51 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 09 10:14:51 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:14:51 +0000] [31954] [DEBUG] Invalid request from ip=54.211.253.53: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:14:51 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:14:51 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 09 10:14:52 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:14:52 +0000] [31954] [DEBUG] GET /
+Dec 09 10:15:49 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:15:49 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 09 10:15:49 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:15:49 +0000] [7208] [DEBUG] Invalid request from ip=54.146.176.145: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:15:49 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:15:49 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 09 10:15:50 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:15:50 +0000] [31954] [DEBUG] GET /
+Dec 09 10:16:44 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:16:44 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 09 10:16:44 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:16:44 +0000] [20314] [DEBUG] Invalid request from ip=174.129.150.7: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:16:44 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:16:44 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 09 10:16:45 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:16:45 +0000] [20314] [DEBUG] GET /
+Dec 09 10:18:08 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:18:08 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 09 10:18:08 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:18:08 +0000] [7172] [DEBUG] Invalid request from ip=54.197.107.10: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:18:08 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:18:08 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 09 10:18:12 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:18:12 +0000] [20314] [DEBUG] GET /
+Dec 09 10:18:28 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:18:28 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 09 10:18:28 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:18:28 +0000] [7208] [DEBUG] Invalid request from ip=54.205.237.58: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:18:28 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:18:28 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 09 10:18:30 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:18:30 +0000] [20314] [DEBUG] GET /
+Dec 09 10:19:30 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:19:30 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 09 10:19:30 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:19:30 +0000] [22513] [DEBUG] Invalid request from ip=54.159.240.81: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:19:30 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:19:30 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 09 10:19:31 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:19:31 +0000] [22513] [DEBUG] GET /
+Dec 09 10:19:58 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:19:58 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 09 10:19:58 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:19:58 +0000] [7208] [DEBUG] Invalid request from ip=54.146.176.145: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:19:58 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:19:58 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 09 10:20:00 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:20:00 +0000] [20314] [DEBUG] GET /
+Dec 09 10:21:47 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:21:47 +0000] [31954] [DEBUG] Error processing SSL request.
+Dec 09 10:21:47 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:21:47 +0000] [31954] [DEBUG] Invalid request from ip=54.204.76.24: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:21:47 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:21:47 +0000] [31954] [DEBUG] Failed to send error message.
+Dec 09 10:21:49 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:21:49 +0000] [31954] [DEBUG] GET /
+Dec 09 10:22:55 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:22:55 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 09 10:22:55 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:22:55 +0000] [20314] [DEBUG] Invalid request from ip=54.163.167.217: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:22:55 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:22:55 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 09 10:22:57 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:22:57 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 09 10:22:57 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:22:57 +0000] [7172] [DEBUG] Invalid request from ip=54.204.193.179: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:22:57 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:22:57 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 09 10:22:59 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:22:59 +0000] [7208] [DEBUG] GET /
+Dec 09 10:23:05 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:23:05 +0000] [22513] [DEBUG] GET /on-the-road/submit
+Dec 09 10:23:24 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:23:24 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 09 10:23:24 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:23:24 +0000] [20314] [DEBUG] Invalid request from ip=54.158.122.137: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:23:24 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:23:24 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 09 10:23:26 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:23:26 +0000] [20314] [DEBUG] GET /
+Dec 09 10:23:57 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:23:57 +0000] [23895] [CRITICAL] WORKER TIMEOUT (pid:31954)
+Dec 09 10:23:57 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:23:57 +0000] [31954] [INFO] Worker exiting (pid: 31954)
+Dec 09 10:23:57 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:23:57 +0000] [20948] [INFO] Booting worker with pid: 20948
+Dec 09 10:24:06 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:24:06 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 09 10:24:06 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:24:06 +0000] [20314] [DEBUG] Invalid request from ip=174.129.150.7: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:24:06 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:24:06 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 09 10:24:07 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:24:07 +0000] [7172] [DEBUG] GET /
+Dec 09 10:27:01 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:27:01 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 09 10:27:01 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:27:01 +0000] [7172] [DEBUG] Invalid request from ip=54.211.206.156: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:27:01 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:27:01 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 09 10:27:04 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:27:04 +0000] [22513] [DEBUG] GET /
+Dec 09 10:27:05 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:27:05 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 09 10:27:05 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:27:05 +0000] [7208] [DEBUG] Invalid request from ip=54.197.107.10: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:27:05 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:27:05 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 09 10:27:08 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:27:08 +0000] [20314] [DEBUG] GET /
+Dec 09 10:28:13 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:28:13 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 09 10:28:13 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:28:13 +0000] [20314] [DEBUG] Invalid request from ip=54.204.245.160: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:28:13 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:28:13 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 09 10:28:15 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:28:15 +0000] [20314] [DEBUG] GET /
+Dec 09 10:29:16 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:29:16 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 09 10:29:16 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:29:16 +0000] [20314] [DEBUG] Invalid request from ip=54.159.140.214: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:29:16 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:29:16 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 09 10:29:18 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:29:18 +0000] [20314] [DEBUG] GET /
+Dec 09 10:30:52 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:30:52 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 09 10:30:52 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:30:52 +0000] [20314] [DEBUG] Invalid request from ip=54.197.112.185: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:30:52 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:30:52 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 09 10:30:53 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:30:53 +0000] [20314] [DEBUG] GET /
+Dec 09 10:30:56 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:30:56 +0000] [20314] [DEBUG] GET /on-the-road/submit
+Dec 09 10:33:57 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:33:57 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 09 10:33:57 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:33:57 +0000] [7208] [DEBUG] Invalid request from ip=54.205.152.242: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:33:57 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:33:57 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 09 10:34:00 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:34:00 +0000] [7208] [DEBUG] GET /
+Dec 09 10:34:04 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:34:04 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 09 10:34:04 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:34:04 +0000] [20314] [DEBUG] Invalid request from ip=54.197.107.10: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:34:04 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:34:04 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 09 10:34:06 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:34:06 +0000] [20314] [DEBUG] GET /
+Dec 09 10:34:42 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:34:42 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 09 10:34:42 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:34:42 +0000] [7208] [DEBUG] Invalid request from ip=50.16.62.51: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:34:42 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:34:42 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 09 10:34:44 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:34:44 +0000] [22513] [DEBUG] GET /
+Dec 09 10:37:21 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:37:21 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 09 10:37:21 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:37:21 +0000] [7208] [DEBUG] Invalid request from ip=54.205.152.242: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:37:21 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:37:21 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 09 10:37:23 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:37:23 +0000] [7208] [DEBUG] GET /
+Dec 09 10:41:18 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:41:18 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 09 10:41:18 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:41:18 +0000] [7172] [DEBUG] Invalid request from ip=54.159.240.81: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:41:18 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:41:18 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 09 10:41:19 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:41:19 +0000] [7208] [DEBUG] GET /
+Dec 09 10:41:45 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:41:45 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 09 10:41:45 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:41:45 +0000] [7172] [DEBUG] Invalid request from ip=54.205.241.181: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:41:45 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:41:45 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 09 10:41:47 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:41:47 +0000] [7208] [DEBUG] GET /
+Dec 09 10:43:43 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:43:43 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 09 10:43:43 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:43:43 +0000] [7208] [DEBUG] Invalid request from ip=54.204.193.179: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:43:43 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:43:43 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 09 10:43:45 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:43:45 +0000] [7208] [DEBUG] GET /
+Dec 09 10:44:16 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:44:16 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 09 10:44:16 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:44:16 +0000] [7208] [DEBUG] Invalid request from ip=54.205.139.61: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:44:16 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:44:16 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 09 10:44:18 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:44:18 +0000] [20948] [DEBUG] GET /
+Dec 09 10:44:33 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:44:33 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 09 10:44:33 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:44:33 +0000] [7172] [DEBUG] Invalid request from ip=54.163.167.217: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:44:33 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:44:33 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 09 10:44:38 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:44:38 +0000] [22513] [DEBUG] GET /
+Dec 09 10:44:48 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:44:48 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 09 10:44:48 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:44:48 +0000] [20314] [DEBUG] Invalid request from ip=54.158.122.137: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:44:48 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:44:48 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 09 10:44:59 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:44:59 +0000] [7172] [DEBUG] GET /
+Dec 09 10:46:06 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:46:06 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 09 10:46:06 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:46:06 +0000] [22513] [DEBUG] Invalid request from ip=54.163.114.139: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:46:06 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:46:06 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 09 10:46:08 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:46:08 +0000] [7208] [DEBUG] GET /
+Dec 09 10:48:03 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:48:03 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 09 10:48:03 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:48:03 +0000] [22513] [DEBUG] Invalid request from ip=50.16.126.156: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:48:03 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:48:03 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 09 10:48:04 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:48:04 +0000] [7208] [DEBUG] GET /
+Dec 09 10:48:28 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:48:28 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 09 10:48:28 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:48:28 +0000] [7172] [DEBUG] Invalid request from ip=54.204.76.24: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:48:28 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:48:28 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 09 10:48:29 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:48:29 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 09 10:48:29 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:48:29 +0000] [22513] [DEBUG] Invalid request from ip=54.163.167.217: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:48:29 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:48:29 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 09 10:48:30 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:48:30 +0000] [22513] [DEBUG] GET /
+Dec 09 10:48:30 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:48:30 +0000] [20314] [DEBUG] GET /
+Dec 09 10:48:54 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:48:54 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 09 10:48:54 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:48:54 +0000] [7172] [DEBUG] Invalid request from ip=54.205.165.98: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:48:54 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:48:54 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 09 10:48:56 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:48:56 +0000] [22513] [DEBUG] GET /
+Dec 09 10:49:19 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:49:19 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 09 10:49:19 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:49:19 +0000] [22513] [DEBUG] Invalid request from ip=54.157.244.224: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:49:19 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:49:19 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 09 10:49:20 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:49:20 +0000] [22513] [DEBUG] GET /
+Dec 09 10:50:09 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:50:09 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 09 10:50:09 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:50:09 +0000] [7172] [DEBUG] Invalid request from ip=50.16.126.156: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:50:09 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:50:09 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 09 10:50:13 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:50:13 +0000] [7208] [DEBUG] GET /
+Dec 09 10:50:16 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:50:16 +0000] [7172] [DEBUG] GET /on-the-road/submit
+Dec 09 10:51:12 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:51:12 +0000] [20948] [DEBUG] Error processing SSL request.
+Dec 09 10:51:12 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:51:12 +0000] [20948] [DEBUG] Invalid request from ip=54.205.139.61: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:51:12 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:51:12 +0000] [20948] [DEBUG] Failed to send error message.
+Dec 09 10:51:15 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:51:15 +0000] [20314] [DEBUG] GET /
+Dec 09 10:51:35 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:51:35 +0000] [20948] [DEBUG] Error processing SSL request.
+Dec 09 10:51:35 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:51:35 +0000] [20948] [DEBUG] Invalid request from ip=54.146.176.145: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:51:35 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:51:35 +0000] [20948] [DEBUG] Failed to send error message.
+Dec 09 10:51:38 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:51:38 +0000] [22513] [DEBUG] GET /
+Dec 09 10:54:41 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:54:41 +0000] [20948] [DEBUG] Error processing SSL request.
+Dec 09 10:54:41 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:54:41 +0000] [20948] [DEBUG] Invalid request from ip=54.159.240.81: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:54:41 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:54:41 +0000] [20948] [DEBUG] Failed to send error message.
+Dec 09 10:54:42 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:54:42 +0000] [20314] [DEBUG] GET /
+Dec 09 10:55:43 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:55:43 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 09 10:55:43 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:55:43 +0000] [20314] [DEBUG] Invalid request from ip=54.197.112.185: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:55:43 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:55:43 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 09 10:55:44 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:55:44 +0000] [20314] [DEBUG] GET /
+Dec 09 10:55:46 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:55:46 +0000] [20314] [DEBUG] GET /on-the-road/submit
+Dec 09 10:59:15 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:59:15 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 09 10:59:15 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:59:15 +0000] [20314] [DEBUG] Invalid request from ip=184.73.82.45: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 10:59:15 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:59:15 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 09 10:59:21 test.balloon-juice.com gunicorn[23895]: [2017-12-09 10:59:21 +0000] [20314] [DEBUG] GET /
+Dec 09 11:02:20 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:02:20 +0000] [7172] [DEBUG] Error processing SSL request.
+Dec 09 11:02:20 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:02:20 +0000] [7172] [DEBUG] Invalid request from ip=50.16.126.156: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 11:02:20 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:02:20 +0000] [7172] [DEBUG] Failed to send error message.
+Dec 09 11:02:22 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:02:22 +0000] [20314] [DEBUG] GET /
+Dec 09 11:03:02 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:03:02 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 09 11:03:02 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:03:02 +0000] [20314] [DEBUG] Invalid request from ip=54.211.12.83: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 11:03:02 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:03:02 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 09 11:03:03 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:03:03 +0000] [20314] [DEBUG] GET /
+Dec 09 11:03:22 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:03:22 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 09 11:03:22 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:03:22 +0000] [22513] [DEBUG] Invalid request from ip=54.159.240.81: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 11:03:22 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:03:22 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 09 11:03:25 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:03:25 +0000] [20314] [DEBUG] GET /
+Dec 09 11:03:49 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:03:49 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 09 11:03:49 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:03:49 +0000] [20314] [DEBUG] Invalid request from ip=54.159.140.214: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 11:03:49 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:03:49 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 09 11:03:50 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:03:50 +0000] [20314] [DEBUG] GET /
+Dec 09 11:04:01 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:04:01 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 09 11:04:01 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:04:01 +0000] [20314] [DEBUG] Invalid request from ip=54.211.253.53: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 11:04:01 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:04:01 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 09 11:04:03 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:04:03 +0000] [20314] [DEBUG] GET /
+Dec 09 11:04:48 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:04:48 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 09 11:04:48 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:04:48 +0000] [22513] [DEBUG] Invalid request from ip=54.158.122.137: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 11:04:48 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:04:48 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 09 11:04:49 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:04:49 +0000] [7208] [DEBUG] GET /
+Dec 09 11:04:51 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:04:51 +0000] [7208] [DEBUG] GET /on-the-road/submit
+Dec 09 11:05:30 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:05:30 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 09 11:05:30 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:05:30 +0000] [7208] [DEBUG] Invalid request from ip=54.205.152.242: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 11:05:30 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:05:30 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 09 11:05:31 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:05:31 +0000] [7208] [DEBUG] GET /
+Dec 09 11:06:12 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:06:12 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 09 11:06:12 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:06:12 +0000] [7208] [DEBUG] Invalid request from ip=54.205.139.61: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 11:06:12 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:06:12 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 09 11:06:14 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:06:14 +0000] [7172] [DEBUG] GET /
+Dec 09 11:08:41 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:08:41 +0000] [7208] [DEBUG] Error processing SSL request.
+Dec 09 11:08:41 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:08:41 +0000] [7208] [DEBUG] Invalid request from ip=54.205.241.181: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 09 11:08:41 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:08:41 +0000] [7208] [DEBUG] Failed to send error message.
+Dec 09 11:08:42 test.balloon-juice.com gunicorn[23895]: [2017-12-09 11:08:42 +0000] [7208] [DEBUG] GET /
+Dec 09 16:33:20 test.balloon-juice.com gunicorn[23895]: [2017-12-09 16:33:20 +0000] [20314] [DEBUG] GET /
+Dec 09 22:02:25 test.balloon-juice.com gunicorn[23895]: [2017-12-09 22:02:25 +0000] [20948] [DEBUG] GET /
+Dec 09 22:02:25 test.balloon-juice.com gunicorn[23895]: [2017-12-09 22:02:25 +0000] [7208] [DEBUG] GET /on-the-road/submit
+Dec 09 22:30:05 test.balloon-juice.com gunicorn[23895]: [2017-12-09 22:30:05 +0000] [7208] [DEBUG] POST /on-the-road/submit
+Dec 09 22:30:06 test.balloon-juice.com gunicorn[23895]: [2017-12-09 22:30:06,561] ERROR in views: {'recaptcha': ['The response parameter is missing.'], 'csrf_token': ['The CSRF tokens do not match.']}
+Dec 09 22:30:06 test.balloon-juice.com gunicorn[23895]: {'recaptcha': ['The response parameter is missing.'], 'csrf_token': ['The CSRF tokens do not match.']}
+Dec 09 22:41:54 test.balloon-juice.com gunicorn[23895]: [2017-12-09 22:41:54 +0000] [7172] [DEBUG] GET /
+Dec 09 22:41:54 test.balloon-juice.com gunicorn[23895]: [2017-12-09 22:41:54 +0000] [7208] [DEBUG] GET /on-the-road/submit
+Dec 09 23:29:23 test.balloon-juice.com gunicorn[23895]: [2017-12-09 23:29:23 +0000] [20314] [DEBUG] POST /on-the-road/submit
+Dec 09 23:29:23 test.balloon-juice.com gunicorn[23895]: [2017-12-09 23:29:23,167] ERROR in views: {'recaptcha': ['The response parameter is missing.'], 'csrf_token': ['The CSRF tokens do not match.']}
+Dec 09 23:29:23 test.balloon-juice.com gunicorn[23895]: {'recaptcha': ['The response parameter is missing.'], 'csrf_token': ['The CSRF tokens do not match.']}
+Dec 10 04:40:10 test.balloon-juice.com gunicorn[23895]: [2017-12-10 04:40:10 +0000] [7208] [DEBUG] GET /robots.txt
+Dec 10 04:41:05 test.balloon-juice.com gunicorn[23895]: [2017-12-10 04:41:05 +0000] [20314] [DEBUG] GET /quotes/submit/
+Dec 10 07:03:15 test.balloon-juice.com gunicorn[23895]: [2017-12-10 07:03:15 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 10 07:03:15 test.balloon-juice.com gunicorn[23895]: [2017-12-10 07:03:15 +0000] [20314] [DEBUG] Invalid request from ip=69.164.203.16: [SSL: SSL_HANDSHAKE_FAILURE] ssl handshake failure (_ssl.c:1754)
+Dec 10 07:03:15 test.balloon-juice.com gunicorn[23895]: [2017-12-10 07:03:15 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 10 07:03:15 test.balloon-juice.com gunicorn[23895]: [2017-12-10 07:03:15 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 10 07:03:15 test.balloon-juice.com gunicorn[23895]: [2017-12-10 07:03:15 +0000] [22513] [DEBUG] Invalid request from ip=69.164.203.16: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 10 07:03:15 test.balloon-juice.com gunicorn[23895]: [2017-12-10 07:03:15 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 10 07:03:15 test.balloon-juice.com gunicorn[23895]: [2017-12-10 07:03:15 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 10 07:03:15 test.balloon-juice.com gunicorn[23895]: [2017-12-10 07:03:15 +0000] [22513] [DEBUG] Invalid request from ip=69.164.203.16: [SSL: UNKNOWN_PROTOCOL] unknown protocol (_ssl.c:1754)
+Dec 10 07:03:15 test.balloon-juice.com gunicorn[23895]: [2017-12-10 07:03:15 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 10 07:03:15 test.balloon-juice.com gunicorn[23895]: [2017-12-10 07:03:15 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 10 07:03:15 test.balloon-juice.com gunicorn[23895]: [2017-12-10 07:03:15 +0000] [22513] [DEBUG] Invalid request from ip=69.164.203.16: [SSL: HTTP_REQUEST] http request (_ssl.c:1754)
+Dec 10 07:03:15 test.balloon-juice.com gunicorn[23895]: [2017-12-10 07:03:15 +0000] [22513] [DEBUG] Failed to send error message.
+Dec 10 07:03:15 test.balloon-juice.com gunicorn[23895]: [2017-12-10 07:03:15 +0000] [22513] [DEBUG] Error processing SSL request.
+Dec 10 07:03:15 test.balloon-juice.com gunicorn[23895]: [2017-12-10 07:03:15 +0000] [22513] [DEBUG] Invalid request from ip=69.164.203.16: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1754)
+Dec 10 07:03:17 test.balloon-juice.com gunicorn[23895]: [2017-12-10 07:03:17 +0000] [22513] [DEBUG] Closing connection.
+Dec 10 07:03:17 test.balloon-juice.com gunicorn[23895]: [2017-12-10 07:03:17 +0000] [22513] [DEBUG] GET /
+Dec 10 12:29:05 test.balloon-juice.com gunicorn[23895]: [2017-12-10 12:29:05 +0000] [20314] [DEBUG] Error processing SSL request.
+Dec 10 12:29:05 test.balloon-juice.com gunicorn[23895]: [2017-12-10 12:29:05 +0000] [20314] [DEBUG] Invalid request from ip=196.52.43.57: [SSL: SSL_HANDSHAKE_FAILURE] ssl handshake failure (_ssl.c:1754)
+Dec 10 12:29:05 test.balloon-juice.com gunicorn[23895]: [2017-12-10 12:29:05 +0000] [20314] [DEBUG] Failed to send error message.
+Dec 10 19:41:11 test.balloon-juice.com gunicorn[23895]: [2017-12-10 19:41:11 +0000] [7208] [DEBUG] GET /
+Dec 11 01:41:42 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:42 +0000] [7208] [DEBUG] POST /on-the-road/admin/
+Dec 11 01:41:43 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:43 +0000] [22513] [DEBUG] GET /static/submissions/0e11d75e-db8b-11e7-b6ff-2ec11fb124ab0.jpg
+Dec 11 01:41:43 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:43 +0000] [7172] [DEBUG] GET /static/submissions/0e11d75e-db8b-11e7-b6ff-2ec11fb124ab1.jpg
+Dec 11 01:41:43 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:43 +0000] [20314] [DEBUG] GET /static/submissions/0e11d75e-db8b-11e7-b6ff-2ec11fb124ab2.jpg
+Dec 11 01:41:43 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:43 +0000] [20948] [DEBUG] GET /static/submissions/0e11d75e-db8b-11e7-b6ff-2ec11fb124ab3.jpg
+Dec 11 01:41:43 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:43 +0000] [7208] [DEBUG] GET /static/submissions/0e11d75e-db8b-11e7-b6ff-2ec11fb124ab4.jpg
+Dec 11 01:41:44 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:44 +0000] [7208] [DEBUG] GET /static/submissions/0e11d75e-db8b-11e7-b6ff-2ec11fb124ab5.jpg
+Dec 11 01:41:44 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:44 +0000] [22513] [DEBUG] GET /static/submissions/0e11d75e-db8b-11e7-b6ff-2ec11fb124ab6.jpg
+Dec 11 01:41:44 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:44 +0000] [7172] [DEBUG] GET /static/submissions/0ed2d6a4-db84-11e7-b6ff-2ec11fb124ab0.jpg
+Dec 11 01:41:44 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:44 +0000] [20314] [DEBUG] GET /static/submissions/0ed2d6a4-db84-11e7-b6ff-2ec11fb124ab1.jpg
+Dec 11 01:41:45 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:45 +0000] [20948] [DEBUG] GET /static/submissions/0ed2d6a4-db84-11e7-b6ff-2ec11fb124ab2.jpg
+Dec 11 01:41:45 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:45 +0000] [7172] [DEBUG] GET /static/submissions/0ed2d6a4-db84-11e7-b6ff-2ec11fb124ab3.jpg
+Dec 11 01:41:46 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:46 +0000] [22513] [DEBUG] GET /static/submissions/0ed2d6a4-db84-11e7-b6ff-2ec11fb124ab4.jpg
+Dec 11 01:41:46 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:46 +0000] [20314] [DEBUG] GET /static/submissions/0ed2d6a4-db84-11e7-b6ff-2ec11fb124ab5.jpg
+Dec 11 01:41:46 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:46 +0000] [7208] [DEBUG] GET /static/submissions/0ed2d6a4-db84-11e7-b6ff-2ec11fb124ab6.jpg
+Dec 11 01:41:46 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:46 +0000] [20948] [DEBUG] GET /static/submissions/059dc218-db77-11e7-b6ff-2ec11fb124ab0.jpg
+Dec 11 01:41:46 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:46 +0000] [7172] [DEBUG] GET /static/submissions/059dc218-db77-11e7-b6ff-2ec11fb124ab1.jpg
+Dec 11 01:41:46 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:46 +0000] [20948] [DEBUG] GET /static/submissions/059dc218-db77-11e7-b6ff-2ec11fb124ab2.jpg
+Dec 11 01:41:46 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:46 +0000] [22513] [DEBUG] GET /static/submissions/059dc218-db77-11e7-b6ff-2ec11fb124ab3.jpg
+Dec 11 01:41:46 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:46 +0000] [20948] [DEBUG] GET /static/submissions/059dc218-db77-11e7-b6ff-2ec11fb124ab4.jpg
+Dec 11 01:41:46 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:46 +0000] [7172] [DEBUG] GET /static/submissions/059dc218-db77-11e7-b6ff-2ec11fb124ab5.jpg
+Dec 11 01:41:46 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:46 +0000] [22513] [DEBUG] GET /static/submissions/059dc218-db77-11e7-b6ff-2ec11fb124ab6.jpg
+Dec 11 01:41:47 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:47 +0000] [22513] [DEBUG] GET /static/submissions/87a507de-db50-11e7-b6ff-2ec11fb124ab0.jpeg
+Dec 11 01:41:47 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:47 +0000] [7208] [DEBUG] GET /static/submissions/87a507de-db50-11e7-b6ff-2ec11fb124ab1.jpeg
+Dec 11 01:41:47 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:47 +0000] [7172] [DEBUG] GET /static/submissions/bf9c41da-b32c-11e7-b6ff-2ec11fb124ab0.JPG
+Dec 11 01:41:47 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:47 +0000] [20314] [DEBUG] GET /static/submissions/3a8fe370-bfde-11e7-b6ff-2ec11fb124ab0.jpg
+Dec 11 01:41:47 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:47 +0000] [20948] [DEBUG] GET /static/submissions/15cfea72-b317-11e7-b6ff-2ec11fb124ab0.jpg
+Dec 11 01:41:47 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:47 +0000] [22513] [DEBUG] GET /static/submissions/15cfea72-b317-11e7-b6ff-2ec11fb124ab1.jpg
+Dec 11 01:41:47 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:47 +0000] [7208] [DEBUG] GET /static/submissions/15cfea72-b317-11e7-b6ff-2ec11fb124ab2.jpg
+Dec 11 01:41:47 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:47 +0000] [7172] [DEBUG] GET /static/submissions/15cfea72-b317-11e7-b6ff-2ec11fb124ab3.jpg
+Dec 11 01:41:47 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:47 +0000] [20314] [DEBUG] GET /static/submissions/15cfea72-b317-11e7-b6ff-2ec11fb124ab4.jpg
+Dec 11 01:41:47 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:47 +0000] [22513] [DEBUG] GET /static/submissions/15cfea72-b317-11e7-b6ff-2ec11fb124ab5.jpg
+Dec 11 01:41:47 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:47 +0000] [7172] [DEBUG] GET /static/submissions/15cfea72-b317-11e7-b6ff-2ec11fb124ab6.jpg
+Dec 11 01:41:47 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:47 +0000] [20948] [DEBUG] GET /static/submissions/7a23d3a2-9af9-11e7-b6ff-2ec11fb124ab0.JPG
+Dec 11 01:41:48 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:48 +0000] [20314] [DEBUG] GET /static/submissions/7a23d3a2-9af9-11e7-b6ff-2ec11fb124ab1.JPG
+Dec 11 01:41:48 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:48 +0000] [7208] [DEBUG] GET /static/submissions/7a23d3a2-9af9-11e7-b6ff-2ec11fb124ab2.JPG
+Dec 11 01:41:48 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:48 +0000] [7172] [DEBUG] GET /static/submissions/a6db8b06-8e5b-11e7-8790-2ec11fb124ab0.jpg
+Dec 11 01:41:48 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:48 +0000] [20948] [DEBUG] GET /static/submissions/f26f1e54-8cd8-11e7-8790-2ec11fb124ab0.jpg
+Dec 11 01:41:48 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:48 +0000] [22513] [DEBUG] GET /static/submissions/9cb0daa2-8cd8-11e7-8790-2ec11fb124ab0.jpg
+Dec 11 01:41:48 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:48 +0000] [20314] [DEBUG] GET /static/submissions/4ebcf10a-8cd8-11e7-8790-2ec11fb124ab0.jpg
+Dec 11 01:41:48 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:48 +0000] [20948] [DEBUG] GET /static/submissions/0ae89376-8cd8-11e7-8790-2ec11fb124ab0.jpg
+Dec 11 01:41:48 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:41:48 +0000] [7208] [DEBUG] GET /static/submissions/f5654ace-8a18-11e7-8790-2ec11fb124ab0.jpg
+Dec 11 01:42:02 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:42:02 +0000] [22513] [DEBUG] POST /on-the-road/admin/
+Dec 11 01:42:03 test.balloon-juice.com gunicorn[23895]: uploading picture 388 to wordpress
+Dec 11 01:42:07 test.balloon-juice.com gunicorn[23895]: uploading picture 389 to wordpress
+Dec 11 01:42:11 test.balloon-juice.com gunicorn[23895]: uploading picture 390 to wordpress
+Dec 11 01:42:14 test.balloon-juice.com gunicorn[23895]: uploading picture 391 to wordpress
+Dec 11 01:42:18 test.balloon-juice.com gunicorn[23895]: uploading picture 392 to wordpress
+Dec 11 01:42:22 test.balloon-juice.com gunicorn[23895]: uploading picture 393 to wordpress
+Dec 11 01:42:25 test.balloon-juice.com gunicorn[23895]: uploading picture 394 to wordpress
+Dec 11 01:42:31 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:42:31,095] ERROR in tasks: Failed to write post for Submission 94, reason: {"code":"json_oauth1_signature_mismatch","message":"OAuth signature does not match","data":{"status":401}}
+Dec 11 01:42:31 test.balloon-juice.com gunicorn[23895]: Failed to write post for Submission 94, reason: {"code":"json_oauth1_signature_mismatch","message":"OAuth signature does not match","data":{"status":401}}
+Dec 11 01:42:31 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:42:31,097] ERROR in views: <type 'exceptions.IOError'>
+Dec 11 01:42:31 test.balloon-juice.com gunicorn[23895]: <type 'exceptions.IOError'>
+Dec 11 01:42:31 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:42:31 +0000] [7208] [DEBUG] GET /on-the-road/admin/
+Dec 11 01:44:45 test.balloon-juice.com gunicorn[23895]: [2017-12-11 01:44:45 +0000] [7208] [DEBUG] POST /on-the-road/admin/
+Dec 11 01:44:46 test.balloon-juice.com gunicorn[23895]: uploading picture 183 to wordpress
+Dec 11 08:44:18 test.balloon-juice.com gunicorn[23895]: [2017-12-11 08:44:18 +0000] [20314] [DEBUG] GET /
+Dec 11 08:44:19 test.balloon-juice.com gunicorn[23895]: [2017-12-11 08:44:19 +0000] [22513] [DEBUG] GET /on-the-road/submit
+Dec 11 10:07:15 test.balloon-juice.com gunicorn[23895]: [2017-12-11 10:07:15 +0000] [20314] [DEBUG] GET /
+Dec 11 10:07:15 test.balloon-juice.com gunicorn[23895]: [2017-12-11 10:07:15 +0000] [7172] [DEBUG] GET /on-the-road/submit
+Dec 11 10:09:58 test.balloon-juice.com gunicorn[23895]: [2017-12-11 10:09:58 +0000] [22513] [DEBUG] GET /
+Dec 11 10:09:58 test.balloon-juice.com gunicorn[23895]: [2017-12-11 10:09:58 +0000] [7172] [DEBUG] GET /on-the-road/submit
+Dec 11 10:14:36 test.balloon-juice.com gunicorn[23895]: [2017-12-11 10:14:36 +0000] [7208] [DEBUG] GET /
+Dec 11 10:14:36 test.balloon-juice.com gunicorn[23895]: [2017-12-11 10:14:36 +0000] [20314] [DEBUG] GET /on-the-road/submit
+Dec 11 10:14:50 test.balloon-juice.com gunicorn[23895]: [2017-12-11 10:14:50 +0000] [7172] [DEBUG] GET /favicon.ico
+Dec 11 10:37:22 test.balloon-juice.com gunicorn[23895]: [2017-12-11 10:37:22 +0000] [22513] [DEBUG] POST /on-the-road/submit
+Dec 11 10:37:46 test.balloon-juice.com gunicorn[23895]: [2017-12-11 10:37:46,283] ERROR in views: {'recaptcha': ['The response parameter is missing.']}
+Dec 11 10:37:46 test.balloon-juice.com gunicorn[23895]: {'recaptcha': ['The response parameter is missing.']}
+Dec 11 10:40:35 test.balloon-juice.com gunicorn[23895]: [2017-12-11 10:40:35 +0000] [7172] [DEBUG] POST /on-the-road/submit
+Dec 11 10:40:50 test.balloon-juice.com gunicorn[23895]: [2017-12-11 10:40:50 +0000] [22513] [DEBUG] GET /on-the-road/thanks/
+Dec 11 11:02:29 test.balloon-juice.com gunicorn[23895]: [2017-12-11 11:02:29 +0000] [20314] [DEBUG] HEAD /
+Dec 11 11:02:30 test.balloon-juice.com gunicorn[23895]: [2017-12-11 11:02:30 +0000] [7172] [DEBUG] HEAD /on-the-road/submit
+Dec 11 11:41:30 test.balloon-juice.com gunicorn[23895]: [2017-12-11 11:41:30 +0000] [7172] [DEBUG] GET /
+Dec 11 11:41:31 test.balloon-juice.com gunicorn[23895]: [2017-12-11 11:41:31 +0000] [22513] [DEBUG] GET /on-the-road/submit
+Dec 11 11:41:40 test.balloon-juice.com gunicorn[23895]: [2017-12-11 11:41:40 +0000] [20948] [DEBUG] GET /favicon.ico
+Dec 11 11:41:40 test.balloon-juice.com gunicorn[23895]: [2017-12-11 11:41:40 +0000] [7208] [DEBUG] GET /favicon.ico
+Dec 11 11:49:26 test.balloon-juice.com gunicorn[23895]: [2017-12-11 11:49:26 +0000] [22513] [DEBUG] HEAD /on-the-road/submit
+Dec 11 11:53:05 test.balloon-juice.com gunicorn[23895]: [2017-12-11 11:53:05 +0000] [20314] [DEBUG] HEAD /
+Dec 11 11:53:05 test.balloon-juice.com gunicorn[23895]: [2017-12-11 11:53:05 +0000] [22513] [DEBUG] HEAD /on-the-road/submit
+Dec 11 12:14:05 test.balloon-juice.com gunicorn[23895]: [2017-12-11 12:14:05 +0000] [22513] [DEBUG] Closing connection.
+Dec 11 12:14:05 test.balloon-juice.com gunicorn[23895]: [2017-12-11 12:14:05 +0000] [22513] [DEBUG] HEAD /
+Dec 11 12:14:06 test.balloon-juice.com gunicorn[23895]: [2017-12-11 12:14:06 +0000] [22513] [DEBUG] Closing connection.
+Dec 11 12:14:06 test.balloon-juice.com gunicorn[23895]: [2017-12-11 12:14:06 +0000] [22513] [DEBUG] HEAD /on-the-road/submit
+Dec 11 12:14:07 test.balloon-juice.com gunicorn[23895]: [2017-12-11 12:14:07 +0000] [7172] [DEBUG] GET /on-the-road/submit
+Dec 11 12:49:22 test.balloon-juice.com gunicorn[23895]: [2017-12-11 12:49:22 +0000] [22513] [DEBUG] GET /
+Dec 11 12:49:23 test.balloon-juice.com gunicorn[23895]: [2017-12-11 12:49:23 +0000] [22513] [DEBUG] GET /on-the-road/submit
+Dec 11 13:10:00 test.balloon-juice.com gunicorn[23895]: [2017-12-11 13:10:00 +0000] [22513] [DEBUG] GET /
+Dec 11 13:10:04 test.balloon-juice.com gunicorn[23895]: [2017-12-11 13:10:04 +0000] [22513] [DEBUG] GET /on-the-road/submit
+Dec 11 14:14:30 test.balloon-juice.com gunicorn[23895]: [2017-12-11 14:14:30 +0000] [7208] [DEBUG] GET /favicon.ico
+Dec 11 14:14:38 test.balloon-juice.com gunicorn[23895]: [2017-12-11 14:14:38 +0000] [20314] [DEBUG] Closing connection.
+Dec 11 14:14:53 test.balloon-juice.com gunicorn[23895]: [2017-12-11 14:14:53 +0000] [20314] [DEBUG] Closing connection.
+Dec 11 14:14:53 test.balloon-juice.com gunicorn[23895]: [2017-12-11 14:14:53 +0000] [20948] [DEBUG] Closing connection.
+Dec 11 14:14:55 test.balloon-juice.com gunicorn[23895]: [2017-12-11 14:14:55 +0000] [7208] [DEBUG] GET /on-the-road/admin/
+Dec 11 14:15:05 test.balloon-juice.com gunicorn[23895]: [2017-12-11 14:15:05 +0000] [22513] [DEBUG] Closing connection.
+Dec 11 14:32:34 test.balloon-juice.com gunicorn[23895]: [2017-12-11 14:32:34 +0000] [20948] [DEBUG] GET /
+Dec 11 14:32:34 test.balloon-juice.com gunicorn[23895]: [2017-12-11 14:32:34 +0000] [20314] [DEBUG] GET /on-the-road/submit
