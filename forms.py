@@ -1,4 +1,6 @@
 import config
+import logging
+
 from flask_uploads import UploadSet, IMAGES
 from flask_wtf import FlaskForm, RecaptchaField
 from flask_wtf.file import FileAllowed, FileField, FileRequired

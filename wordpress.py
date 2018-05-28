@@ -5,8 +5,7 @@ import json
 
 
 class WordpressAPI(object):
-    def __init__(self, credentials='test'):
-        assert credentials in ('test', 'production')
+    def __init__(self, credentials='production'):
         get_value = lambda k: config.WORDPRESS[credentials][k]
         self.base_url = get_value('base_url')
         self.client_key = get_value('client_key')
@@ -33,6 +32,7 @@ class WordpressAPI(object):
         return self.post('/wp/v2/media', files=files, **kwargs)
 
     def verify_nym(self, nym, email):
+        email = email.lower()
         payload = {'author_email': email}
         r = self.get('/wp/v2/comments', params=payload)
         if r.status_code != 200:

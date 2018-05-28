@@ -166,6 +166,7 @@ def submit_on_the_road():
         return redirect(url_for('thanks_on_the_road'))
     if form.errors:
         app.logger.error(form.errors)
+        app.logger.error("Nym error?: %s, %s" % (form.nym.data, form.email.data))
     return render_template(
             'submit_on_the_road.html', form=form, config=app.config, 
             slice_index=slice_index
