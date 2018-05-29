@@ -1,1 +1,0 @@
-/home/tynan/on-the-road/venv-on_the_road/bin/gunicorn main:app -w 3 -b 0.0.0.0:5001 --log-level debug --certfile=/etc/letsencrypt/live/test.balloon-juice.com/fullchain.pem --keyfile=/etc/letsencrypt/live/test.balloon-juice.com/privkey.pem 
