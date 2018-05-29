@@ -9,3 +9,5 @@ static/submissions/*
 notes.md
 test*
 log.txt
+config.py
+
